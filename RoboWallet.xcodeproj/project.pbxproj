@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB8C67BB27221DFD0006BF1B /* RoboWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67BA27221DFD0006BF1B /* RoboWalletApp.swift */; };
+		DB8C67BD27221DFD0006BF1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67BC27221DFD0006BF1B /* ContentView.swift */; };
+		DB8C67BF27221DFF0006BF1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8C67BE27221DFF0006BF1B /* Assets.xcassets */; };
+		DB8C67C227221DFF0006BF1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8C67C127221DFF0006BF1B /* Preview Assets.xcassets */; };
+		DB8C67CC27221DFF0006BF1B /* RoboWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67CB27221DFF0006BF1B /* RoboWalletTests.swift */; };
+		DB8C67D627221DFF0006BF1B /* RoboWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67D527221DFF0006BF1B /* RoboWalletUITests.swift */; };
+		DB8C67D827221DFF0006BF1B /* RoboWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67D727221DFF0006BF1B /* RoboWalletUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB8C67C827221DFF0006BF1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8C67AF27221DFD0006BF1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8C67B627221DFD0006BF1B;
+			remoteInfo = RoboWallet;
+		};
+		DB8C67D227221DFF0006BF1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8C67AF27221DFD0006BF1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8C67B627221DFD0006BF1B;
+			remoteInfo = RoboWallet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB8C67B727221DFD0006BF1B /* RoboWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8C67BA27221DFD0006BF1B /* RoboWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboWalletApp.swift; sourceTree = "<group>"; };
+		DB8C67BC27221DFD0006BF1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DB8C67BE27221DFF0006BF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB8C67C127221DFF0006BF1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB8C67C727221DFF0006BF1B /* RoboWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8C67CB27221DFF0006BF1B /* RoboWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboWalletTests.swift; sourceTree = "<group>"; };
+		DB8C67D127221DFF0006BF1B /* RoboWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8C67D527221DFF0006BF1B /* RoboWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboWalletUITests.swift; sourceTree = "<group>"; };
+		DB8C67D727221DFF0006BF1B /* RoboWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB8C67B427221DFD0006BF1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8C67C427221DFF0006BF1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8C67CE27221DFF0006BF1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB8C67AE27221DFD0006BF1B = {
+			isa = PBXGroup;
+			children = (
+				DB8C67B927221DFD0006BF1B /* RoboWallet */,
+				DB8C67CA27221DFF0006BF1B /* RoboWalletTests */,
+				DB8C67D427221DFF0006BF1B /* RoboWalletUITests */,
+				DB8C67B827221DFD0006BF1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB8C67B827221DFD0006BF1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C67B727221DFD0006BF1B /* RoboWallet.app */,
+				DB8C67C727221DFF0006BF1B /* RoboWalletTests.xctest */,
+				DB8C67D127221DFF0006BF1B /* RoboWalletUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8C67B927221DFD0006BF1B /* RoboWallet */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C67BA27221DFD0006BF1B /* RoboWalletApp.swift */,
+				DB8C67BC27221DFD0006BF1B /* ContentView.swift */,
+				DB8C67BE27221DFF0006BF1B /* Assets.xcassets */,
+				DB8C67C027221DFF0006BF1B /* Preview Content */,
+			);
+			path = RoboWallet;
+			sourceTree = "<group>";
+		};
+		DB8C67C027221DFF0006BF1B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C67C127221DFF0006BF1B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DB8C67CA27221DFF0006BF1B /* RoboWalletTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C67CB27221DFF0006BF1B /* RoboWalletTests.swift */,
+			);
+			path = RoboWalletTests;
+			sourceTree = "<group>";
+		};
+		DB8C67D427221DFF0006BF1B /* RoboWalletUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB8C67D527221DFF0006BF1B /* RoboWalletUITests.swift */,
+				DB8C67D727221DFF0006BF1B /* RoboWalletUITestsLaunchTests.swift */,
+			);
+			path = RoboWalletUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB8C67B627221DFD0006BF1B /* RoboWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8C67DB27221DFF0006BF1B /* Build configuration list for PBXNativeTarget "RoboWallet" */;
+			buildPhases = (
+				DB8C67B327221DFD0006BF1B /* Sources */,
+				DB8C67B427221DFD0006BF1B /* Frameworks */,
+				DB8C67B527221DFD0006BF1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoboWallet;
+			productName = RoboWallet;
+			productReference = DB8C67B727221DFD0006BF1B /* RoboWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB8C67C627221DFF0006BF1B /* RoboWalletTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8C67DE27221DFF0006BF1B /* Build configuration list for PBXNativeTarget "RoboWalletTests" */;
+			buildPhases = (
+				DB8C67C327221DFF0006BF1B /* Sources */,
+				DB8C67C427221DFF0006BF1B /* Frameworks */,
+				DB8C67C527221DFF0006BF1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB8C67C927221DFF0006BF1B /* PBXTargetDependency */,
+			);
+			name = RoboWalletTests;
+			productName = RoboWalletTests;
+			productReference = DB8C67C727221DFF0006BF1B /* RoboWalletTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB8C67D027221DFF0006BF1B /* RoboWalletUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8C67E127221DFF0006BF1B /* Build configuration list for PBXNativeTarget "RoboWalletUITests" */;
+			buildPhases = (
+				DB8C67CD27221DFF0006BF1B /* Sources */,
+				DB8C67CE27221DFF0006BF1B /* Frameworks */,
+				DB8C67CF27221DFF0006BF1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB8C67D327221DFF0006BF1B /* PBXTargetDependency */,
+			);
+			name = RoboWalletUITests;
+			productName = RoboWalletUITests;
+			productReference = DB8C67D127221DFF0006BF1B /* RoboWalletUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB8C67AF27221DFD0006BF1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					DB8C67B627221DFD0006BF1B = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					DB8C67C627221DFF0006BF1B = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = DB8C67B627221DFD0006BF1B;
+					};
+					DB8C67D027221DFF0006BF1B = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = DB8C67B627221DFD0006BF1B;
+					};
+				};
+			};
+			buildConfigurationList = DB8C67B227221DFD0006BF1B /* Build configuration list for PBXProject "RoboWallet" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB8C67AE27221DFD0006BF1B;
+			productRefGroup = DB8C67B827221DFD0006BF1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB8C67B627221DFD0006BF1B /* RoboWallet */,
+				DB8C67C627221DFF0006BF1B /* RoboWalletTests */,
+				DB8C67D027221DFF0006BF1B /* RoboWalletUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB8C67B527221DFD0006BF1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8C67C227221DFF0006BF1B /* Preview Assets.xcassets in Resources */,
+				DB8C67BF27221DFF0006BF1B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8C67C527221DFF0006BF1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8C67CF27221DFF0006BF1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB8C67B327221DFD0006BF1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8C67BD27221DFD0006BF1B /* ContentView.swift in Sources */,
+				DB8C67BB27221DFD0006BF1B /* RoboWalletApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8C67C327221DFF0006BF1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8C67CC27221DFF0006BF1B /* RoboWalletTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8C67CD27221DFF0006BF1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8C67D627221DFF0006BF1B /* RoboWalletUITests.swift in Sources */,
+				DB8C67D827221DFF0006BF1B /* RoboWalletUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB8C67C927221DFF0006BF1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8C67B627221DFD0006BF1B /* RoboWallet */;
+			targetProxy = DB8C67C827221DFF0006BF1B /* PBXContainerItemProxy */;
+		};
+		DB8C67D327221DFF0006BF1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8C67B627221DFD0006BF1B /* RoboWallet */;
+			targetProxy = DB8C67D227221DFF0006BF1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DB8C67D927221DFF0006BF1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DB8C67DA27221DFF0006BF1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB8C67DC27221DFF0006BF1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RoboWallet/Preview Content\"";
+				DEVELOPMENT_TEAM = GRV5YSFBJP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirzayevfarid.RoboWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB8C67DD27221DFF0006BF1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RoboWallet/Preview Content\"";
+				DEVELOPMENT_TEAM = GRV5YSFBJP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirzayevfarid.RoboWallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DB8C67DF27221DFF0006BF1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GRV5YSFBJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirzayevfarid.RoboWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoboWallet.app/RoboWallet";
+			};
+			name = Debug;
+		};
+		DB8C67E027221DFF0006BF1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GRV5YSFBJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirzayevfarid.RoboWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoboWallet.app/RoboWallet";
+			};
+			name = Release;
+		};
+		DB8C67E227221DFF0006BF1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GRV5YSFBJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirzayevfarid.RoboWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RoboWallet;
+			};
+			name = Debug;
+		};
+		DB8C67E327221DFF0006BF1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GRV5YSFBJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mirzayevfarid.RoboWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RoboWallet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB8C67B227221DFD0006BF1B /* Build configuration list for PBXProject "RoboWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8C67D927221DFF0006BF1B /* Debug */,
+				DB8C67DA27221DFF0006BF1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8C67DB27221DFF0006BF1B /* Build configuration list for PBXNativeTarget "RoboWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8C67DC27221DFF0006BF1B /* Debug */,
+				DB8C67DD27221DFF0006BF1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8C67DE27221DFF0006BF1B /* Build configuration list for PBXNativeTarget "RoboWalletTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8C67DF27221DFF0006BF1B /* Debug */,
+				DB8C67E027221DFF0006BF1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8C67E127221DFF0006BF1B /* Build configuration list for PBXNativeTarget "RoboWalletUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8C67E227221DFF0006BF1B /* Debug */,
+				DB8C67E327221DFF0006BF1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB8C67AF27221DFD0006BF1B /* Project object */;
+}
