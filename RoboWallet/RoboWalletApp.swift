@@ -11,7 +11,7 @@ import SwiftUI
 struct RoboWalletApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Login()
         }
     }
 }

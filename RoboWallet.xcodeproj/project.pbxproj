@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		DB8C67BB27221DFD0006BF1B /* RoboWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67BA27221DFD0006BF1B /* RoboWalletApp.swift */; };
-		DB8C67BD27221DFD0006BF1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67BC27221DFD0006BF1B /* ContentView.swift */; };
+		DB8C67BD27221DFD0006BF1B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67BC27221DFD0006BF1B /* Login.swift */; };
 		DB8C67BF27221DFF0006BF1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8C67BE27221DFF0006BF1B /* Assets.xcassets */; };
 		DB8C67C227221DFF0006BF1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8C67C127221DFF0006BF1B /* Preview Assets.xcassets */; };
 		DB8C67CC27221DFF0006BF1B /* RoboWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67CB27221DFF0006BF1B /* RoboWalletTests.swift */; };
 		DB8C67D627221DFF0006BF1B /* RoboWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67D527221DFF0006BF1B /* RoboWalletUITests.swift */; };
 		DB8C67D827221DFF0006BF1B /* RoboWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67D727221DFF0006BF1B /* RoboWalletUITestsLaunchTests.swift */; };
+		DBFCC475272332D200C399DE /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCC474272332D100C399DE /* PrimaryButton.swift */; };
+		DBFCC47727237C3D00C399DE /* CustomInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCC47627237C3D00C399DE /* CustomInput.swift */; };
+		DBFCC47A27237CDA00C399DE /* BlurredBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCC47927237CDA00C399DE /* BlurredBackground.swift */; };
+		DBFCC47C27237D2C00C399DE /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCC47B27237D2C00C399DE /* SignUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		DB8C67B727221DFD0006BF1B /* RoboWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8C67BA27221DFD0006BF1B /* RoboWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboWalletApp.swift; sourceTree = "<group>"; };
-		DB8C67BC27221DFD0006BF1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DB8C67BC27221DFD0006BF1B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		DB8C67BE27221DFF0006BF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB8C67C127221DFF0006BF1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB8C67C727221DFF0006BF1B /* RoboWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,10 @@
 		DB8C67D127221DFF0006BF1B /* RoboWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoboWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8C67D527221DFF0006BF1B /* RoboWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboWalletUITests.swift; sourceTree = "<group>"; };
 		DB8C67D727221DFF0006BF1B /* RoboWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DBFCC474272332D100C399DE /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		DBFCC47627237C3D00C399DE /* CustomInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
+		DBFCC47927237CDA00C399DE /* BlurredBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredBackground.swift; sourceTree = "<group>"; };
+		DBFCC47B27237D2C00C399DE /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +102,10 @@
 		DB8C67B927221DFD0006BF1B /* RoboWallet */ = {
 			isa = PBXGroup;
 			children = (
+				DBFCC473272332A200C399DE /* Components */,
 				DB8C67BA27221DFD0006BF1B /* RoboWalletApp.swift */,
-				DB8C67BC27221DFD0006BF1B /* ContentView.swift */,
+				DB8C67BC27221DFD0006BF1B /* Login.swift */,
+				DBFCC47B27237D2C00C399DE /* SignUp.swift */,
 				DB8C67BE27221DFF0006BF1B /* Assets.xcassets */,
 				DB8C67C027221DFF0006BF1B /* Preview Content */,
 			);
@@ -125,6 +135,16 @@
 				DB8C67D727221DFF0006BF1B /* RoboWalletUITestsLaunchTests.swift */,
 			);
 			path = RoboWalletUITests;
+			sourceTree = "<group>";
+		};
+		DBFCC473272332A200C399DE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DBFCC474272332D100C399DE /* PrimaryButton.swift */,
+				DBFCC47627237C3D00C399DE /* CustomInput.swift */,
+				DBFCC47927237CDA00C399DE /* BlurredBackground.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB8C67BD27221DFD0006BF1B /* ContentView.swift in Sources */,
+				DBFCC475272332D200C399DE /* PrimaryButton.swift in Sources */,
+				DBFCC47C27237D2C00C399DE /* SignUp.swift in Sources */,
+				DB8C67BD27221DFD0006BF1B /* Login.swift in Sources */,
 				DB8C67BB27221DFD0006BF1B /* RoboWalletApp.swift in Sources */,
+				DBFCC47A27237CDA00C399DE /* BlurredBackground.swift in Sources */,
+				DBFCC47727237C3D00C399DE /* CustomInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
