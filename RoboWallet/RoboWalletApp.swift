@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import NavigationKit
+
 
 @main
 struct RoboWalletApp: App {
     var body: some Scene {
         WindowGroup {
-            Login()
+            NavigationView {
+                ContentView()
+            }
+
         }
     }
 }
