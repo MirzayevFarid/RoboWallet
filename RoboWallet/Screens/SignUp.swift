@@ -10,10 +10,11 @@
 import SwiftUI
 
 struct SignUp: View {
-    @State var userName = ""
-    @State var password = ""
-    @State var email = ""
+    @EnvironmentObject var userInfo: UserInfo
+    @State var user: UserViewModel = UserViewModel()
     @Environment(\.presentationMode) private var presentationMode
+    @State private var showError = false
+    @State private var errorString = ""
 
     var body: some View {
         ScrollView (.vertical, showsIndicators: false) {
@@ -27,23 +28,37 @@ struct SignUp: View {
                         .font(Font.system(size: 32, weight: .bold))
                         .padding(.bottom, 0)
                     VStack(spacing:20) {
-                        CustomInput(text: $userName, icon: "person", color: "yellow", placeHolder: "Username")
+                        CustomInput(text: self.$user.fullname, icon: "person", color: "yellow", placeHolder: "Username")
                             .padding(20)
                             .background(Color("card"))
                             .cornerRadius(25)
 
-                        CustomInput(text: $email, icon: "envelope", color: "green", placeHolder: "Email")
+                        CustomInput(text: self.$user.email, icon: "envelope", color: "green", placeHolder: "Email")
                             .padding(20)
                             .background(Color("card"))
                             .cornerRadius(25)
 
-                        CustomInput(text: $password, icon: "lock", color: "purple",isSecure: true, placeHolder: "Password")
+                        CustomInput(text: self.$user.password, icon: "lock", color: "purple",isSecure: true, placeHolder: "Password")
                             .padding(20)
                             .background(Color("card"))
                             .cornerRadius(25)
                     }
                     PrimaryButton(text: "Register") {
+                        FBAuth.createUser(withEmail: self.user.email,
+                                          name: self.user.fullname,
+                                          password: self.user.password) { (result) in
+                            switch result {
+                            case .failure(let error):
+                                self.errorString = error.localizedDescription
+                                self.showError = true
+                            case .success( _):
+                                print("Account creation successful")
+                            }
 
+                        }
+                    }
+                    .alert(isPresented: $showError) {
+                        Alert(title: Text("Error creating accout"), message: Text(self.errorString), dismissButton: .default(Text("OK")))
                     }
                     Spacer()
                     Text("Already have an account?")

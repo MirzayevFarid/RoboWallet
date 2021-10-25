@@ -8,12 +8,14 @@
 // @TODO: Change offset on keyboard opened
 
 import SwiftUI
-import NavigationKit
 
 struct Login: View {
-    @State var userName = ""
-    @State var password = ""
+    @EnvironmentObject var userInfo: UserInfo
+    @State var user: UserViewModel = UserViewModel()
 
+    @State private var showAlert = false
+    @State private var authError: EmailAuthError?
+    
     var body: some View {
         ScrollView (.vertical, showsIndicators: false) {
             ZStack {
@@ -41,10 +43,10 @@ struct Login: View {
                             .padding(30)
 
                         VStack(spacing:20) {
-                            CustomInput(text: $userName, icon: "person", color: "yellow", placeHolder: "Username")
+                            CustomInput(text: self.$user.email, icon: "person", color: "yellow", placeHolder: "Username")
 
                             Divider()
-                            CustomInput(text: $password, icon: "lock", color: "purple",isSecure: true, placeHolder: "Password")
+                            CustomInput(text: self.$user.password, icon: "lock", color: "purple",isSecure: true, placeHolder: "Password")
                         }
                         .padding(25)
                         .background(Color("card"))
@@ -55,8 +57,23 @@ struct Login: View {
                             Text("Forget Password?")
                                 .foregroundColor(Color("purple2"))
                             PrimaryButton(text: "Login") {
+
+                                FBAuth.authenticate(withEmail: self.user.email,
+                                                    password: self.user.password) { (result) in
+                                    switch result {
+                                    case .failure(let error):
+                                        self.authError = error
+                                        self.showAlert = true
+                                    case .success( _):
+                                        print("Signed in")
+                                    }
+                                }
+
+
                             }
                         }
+
+
                         Spacer()
                         Text("Don't have an account?")
                             .foregroundColor(.gray)
@@ -68,6 +85,16 @@ struct Login: View {
                          } label: {
                              Text("Register")
                                  .foregroundColor(Color("purple2"))
+                         }
+                         .alert(isPresented: $showAlert) {
+                             Alert(title: Text("Login Error"), message: Text(self.authError?.localizedDescription ?? "Unknown error"), dismissButton: .default(Text("OK")) {
+                                 if self.authError == .incorrectPassword {
+                                     self.user.password = ""
+                                 } else {
+                                     self.user.password = ""
+                                     self.user.email = ""
+                                 }
+                             })
                          }
 
                         Spacer()
@@ -83,8 +110,6 @@ struct Login: View {
                             .padding(.bottom, 30)
 
                         Spacer(minLength: 80)
-
-
                     }
                     .padding(25)
                     .background(BlurredBackground())

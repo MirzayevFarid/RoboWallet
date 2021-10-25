@@ -8,21 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State var isLoggedIn = false
+    @EnvironmentObject var userInfo: UserInfo
     @State var tabBarPages: [TabBarPage] = [
         TabBarPage(page: Home(), icon: "homekit", tag: "Home", color: .white),
         TabBarPage(page: Home(), icon: "chart.xyaxis.line", tag: "Analyze", color: .white),
         TabBarPage(page: Home(), icon: "bitcoinsign.circle", tag: "Profil", color: .white),
         TabBarPage(page: Home(), icon: "newspaper", tag: "News", color: .white),
-        TabBarPage(page: Home(), icon: "person", tag: "Profile", color: .white),
+        TabBarPage(page: Profile(), icon: "person", tag: "Profile", color: .white),
     ]
     
     var body: some View {
-        if(isLoggedIn){
-            TabBarView(pages: $tabBarPages)        }
-        else{
-            Login()
+        Group {
+            if userInfo.isUserAuthenticated == .undefined {
+                Text("Loading...")
+            } else if userInfo.isUserAuthenticated == .signedOut {
+                Login()
+            } else {
+                TabBarView(pages: $tabBarPages)
+            }
+        }
+        .onAppear {
+            self.userInfo.configureFirebaseStateDidChange()
         }
     }
 }
@@ -30,5 +36,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
     }
 }

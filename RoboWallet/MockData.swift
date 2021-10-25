@@ -29,11 +29,39 @@ let coinList = [
         rate: "2.15%"
 
     ),
-//coinSample(
-//        image: "bitcoinsign.circle",
-//        name: "LTC",
-//        price: "$45000",
-//        rate: "2.15%"
-//        
-//    )
+coinSample(
+        image: "bitcoinsign.circle",
+        name: "LTC",
+        price: "$45000",
+        rate: "2.15%"
+
+    ),
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "BTC",
+        price: "$45000",
+        rate: "2.15%"
+
+    ),
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "ETH",
+        price: "$45000",
+        rate: "2.15%"
+
+    ),
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "BTC",
+        price: "$45000",
+        rate: "2.15%"
+
+    ),
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "ETH",
+        price: "$45000",
+        rate: "2.15%"
+
+    ),
 ]

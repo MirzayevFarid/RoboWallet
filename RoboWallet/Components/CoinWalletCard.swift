@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CoinCard: View {
+struct CoinWalletCard: View {
     var coin: coinSample
     var body: some View {
 
