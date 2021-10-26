@@ -124,8 +124,6 @@ struct Login: View {
             .ignoresSafeArea()
         }
         .ignoresSafeArea()
-        .statusBar(hidden: true)
-        .navigationBarHidden(true)
     }
 }
 extension View {

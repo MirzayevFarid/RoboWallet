@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1730D07A262589104B09DC32 /* Pods_RoboWallet_RoboWalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13081459CB7A4E0664DDA4C4 /* Pods_RoboWallet_RoboWalletUITests.framework */; };
 		891875ACC85279C79A2E4C45 /* Pods_RoboWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F7337E8619BDE1C2DE1BBCF /* Pods_RoboWallet.framework */; };
+		DB458AF02728681600BB2E8C /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB458AEF2728681600BB2E8C /* Market.swift */; };
+		DB458AF227289D1100BB2E8C /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB458AF127289D1100BB2E8C /* SegmentedPicker.swift */; };
 		DB7112772727488E00D8E607 /* NavigationKit in Frameworks */ = {isa = PBXBuildFile; productRef = DB7112762727488E00D8E607 /* NavigationKit */; };
 		DB71127A2727495300D8E607 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7112792727495300D8E607 /* FBUser.swift */; };
 		DB71127C2727496400D8E607 /* FBFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71127B2727496400D8E607 /* FBFireStore.swift */; };
@@ -70,6 +72,8 @@
 		7E7D80BD3042ADC2AD3E4151 /* Pods_RoboWalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoboWalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2C109DB460929818E801F2 /* Pods-RoboWalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboWalletTests.debug.xcconfig"; path = "Target Support Files/Pods-RoboWalletTests/Pods-RoboWalletTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D835E7C76C47C23B7C43013B /* Pods-RoboWallet-RoboWalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoboWallet-RoboWalletUITests.release.xcconfig"; path = "Target Support Files/Pods-RoboWallet-RoboWalletUITests/Pods-RoboWallet-RoboWalletUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DB458AEF2728681600BB2E8C /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		DB458AF127289D1100BB2E8C /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		DB7112792727495300D8E607 /* FBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
 		DB71127B2727496400D8E607 /* FBFireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFireStore.swift; sourceTree = "<group>"; };
 		DB71127D2727496D00D8E607 /* FBFireStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFireStoreError.swift; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				DBFCC47B27237D2C00C399DE /* SignUp.swift */,
 				DBE3A846272461BF00DE680A /* Home.swift */,
 				DBBE3AB6272751A6004A988D /* Profile.swift */,
+				DB458AEF2728681600BB2E8C /* Market.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				DBE3A848272464DE00DE680A /* TabBarView.swift */,
 				DBE3A84E2724935F00DE680A /* CoinWalletCard.swift */,
 				DBE3A8502724C37100DE680A /* ActionCard.swift */,
+				DB458AF127289D1100BB2E8C /* SegmentedPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 			files = (
 				DBFCC475272332D200C399DE /* PrimaryButton.swift in Sources */,
 				DBFCC47C27237D2C00C399DE /* SignUp.swift in Sources */,
+				DB458AF227289D1100BB2E8C /* SegmentedPicker.swift in Sources */,
 				DB8C67BD27221DFD0006BF1B /* Login.swift in Sources */,
 				DBBE3AB7272751A6004A988D /* Profile.swift in Sources */,
 				DBE3A8512724C37100DE680A /* ActionCard.swift in Sources */,
@@ -554,6 +561,7 @@
 				DBFCC47A27237CDA00C399DE /* BlurredBackground.swift in Sources */,
 				DBC80EC627273EB600B6291F /* FBAuth.swift in Sources */,
 				DB71127E2727496D00D8E607 /* FBFireStoreError.swift in Sources */,
+				DB458AF02728681600BB2E8C /* Market.swift in Sources */,
 				DB77E6DB27260145009AE52C /* UserInfo.swift in Sources */,
 				DB71127A2727495300D8E607 /* FBUser.swift in Sources */,
 				DBFCC47727237C3D00C399DE /* CustomInput.swift in Sources */,

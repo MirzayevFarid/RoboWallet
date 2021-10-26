@@ -23,7 +23,8 @@ struct RoboWalletApp: App {
             NavigationView {
                 ContentView().environmentObject(userInfo)
             }
-
+            .statusBar(hidden: true)
+            .navigationBarHidden(true)
         }
     }
 }

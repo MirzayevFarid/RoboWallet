@@ -8,6 +8,7 @@ import SwiftUI
 
 
 struct coinSample: Codable, Hashable{
+    var id = UUID()
     let image: String
     let name: String
     let price: String
@@ -61,6 +62,55 @@ coinSample(
         image: "bitcoinsign.circle",
         name: "ETH",
         price: "$45000",
+        rate: "2.15%"
+
+    ),
+]
+
+
+let coinList2 = [
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "BTCccc",
+        price: "$45000",
+        rate: "2.15%"
+
+    ),
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "ETHhhh",
+        price: "$45000",
+        rate: "2.15%"
+
+    ),
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "LTCccc",
+        price: "$45000",
+        rate: "2.15%"
+
+    ),
+]
+
+let coinList3 = [
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "BTCcccaaa",
+        price: "$4",
+        rate: "2.15%"
+
+    ),
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "ETH",
+        price: "$4000",
+        rate: "2.15%"
+
+    ),
+    coinSample(
+        image: "bitcoinsign.circle",
+        name: "LTC",
+        price: "$3500",
         rate: "2.15%"
 
     ),

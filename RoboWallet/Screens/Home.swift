@@ -16,24 +16,26 @@ struct Home: View {
     @EnvironmentObject var userInfo: UserInfo
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(alignment: .leading) {
-                Text("Home")
-                    .font(Font.system(size: 32, weight: .bold))
-                    .padding()
+
+        VStack(alignment: .leading) {
+            Text("Home")
+                .font(Font.system(size: 32, weight: .bold))
+                .padding()
 
 
-                // ACTION BUTTONS
-                HStack(alignment: .top) {
-                    Spacer()
-                    Spacer()
-                    ActionCard(name: "Watchlist", icon: "star", color: "green", action: {})
-                    ActionCard(name: "Convert", icon: "repeat", color: "yellow", action: {})
-                    ActionCard(name: "Compare", icon: "square.on.square", color: "blue", action: {})
-                    ActionCard(name: "Price Alert", icon: "bolt", color: "purple", action: {})
-                }
+            // ACTION BUTTONS
+            HStack(alignment: .top) {
+                Spacer()
+                Spacer()
+                ActionCard(name: "Watchlist", icon: "star", color: "green", action: {})
+                ActionCard(name: "Convert", icon: "repeat", color: "yellow", action: {})
+                ActionCard(name: "Compare", icon: "square.on.square", color: "blue", action: {})
+                ActionCard(name: "Price Alert", icon: "bolt", color: "purple", action: {})
+            }
 
 
+
+            ScrollView(showsIndicators: false) {
 
                 VStack(alignment: .leading){
                     // WALLET
@@ -58,6 +60,8 @@ struct Home: View {
                     ForEach(coinList, id: \.self) { coin in
                         CoinCard(coin: coin)
                     }.padding(.top)
+
+
                     Spacer(minLength: 80)
 
                 }
@@ -65,12 +69,9 @@ struct Home: View {
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .ignoresSafeArea()
             }
-            .padding(.vertical)
-            .background(BlurredBackground())
-
         }
-        .statusBar(hidden: true)
-        .navigationBarHidden(true)
+        .padding(.vertical)
+        .background(BlurredBackground())
         .ignoresSafeArea()
         .onAppear {
             guard let uid = Auth.auth().currentUser?.uid else {
