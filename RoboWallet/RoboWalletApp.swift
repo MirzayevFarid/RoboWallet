@@ -12,7 +12,8 @@ import NavigationKit
 @main
 struct RoboWalletApp: App {
 
-    var userInfo = UserInfo()
+    @StateObject private var userInfo = UserInfo()
+    @StateObject private var vm = HomeViewModel()
 
     init(){
         FirebaseApp.configure()
@@ -21,7 +22,9 @@ struct RoboWalletApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView().environmentObject(userInfo)
+                ContentView()
+                    .environmentObject(userInfo)
+                    .environmentObject(vm)
             }
             .statusBar(hidden: true)
             .navigationBarHidden(true)

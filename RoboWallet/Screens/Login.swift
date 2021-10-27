@@ -68,8 +68,6 @@ struct Login: View {
                                         print("Signed in")
                                     }
                                 }
-
-
                             }
                         }
 
