@@ -69,8 +69,7 @@ struct SegmentedPicker: View {
         // This is required for `.animation()` to display properly, otherwise the animation will fire on init
         let isInitialized: Bool = segmentSize != .zero
         if !isInitialized { return EmptyView().eraseToAnyView() }
-        return
-        RoundedRectangle(cornerRadius: SegmentedPicker.SegmentCornerRadius)
+        return RoundedRectangle(cornerRadius: SegmentedPicker.SegmentCornerRadius)
             .foregroundColor(SegmentedPicker.ActiveSegmentColor)
             .shadow(color: SegmentedPicker.ShadowColor, radius: SegmentedPicker.ShadowRadius)
             .frame(width: self.segmentSize.width, height: self.segmentSize.height)
@@ -114,8 +113,7 @@ struct SegmentedPicker: View {
             return EmptyView().eraseToAnyView()
         }
         let isSelected = self.selection == index
-        return
-        Text(self.items[index])
+        return Text(self.items[index])
         // Dark test for selected segment
             .foregroundColor(isSelected ? SegmentedPicker.SelectedTextColor: SegmentedPicker.TextColor)
             .lineLimit(1)
