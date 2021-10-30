@@ -24,9 +24,9 @@ struct ActionCard: View {
                         .background(
                             Circle()
                                 .fill(Color("card"))
-                                .frame(width: 80, height: 80)
+                                .frame(width: 60, height: 60)
                         )
-                        .frame(width: 80, height: 80)
+                        .frame(width: 60, height: 60)
                     Text(name)
                         .foregroundColor(.white)
                 }

@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct TabBarView: View {
 
@@ -12,7 +13,6 @@ struct TabBarView: View {
         ZStack(alignment: .bottom) {
 
             TabView(selection: $selectedTab) {
-
                 ForEach(pages) { item in
                     AnyView(_fromValue: item.page)
                         .tabItem{
@@ -36,8 +36,10 @@ struct TabBarView: View {
             }
             .padding(20)
             .padding(.bottom, 5)
-            .background(Color("card"))
+            .background(BlurredBackground().blur(radius: 8))
             .cornerRadius(40)
+
+
         }.ignoresSafeArea()
 
     }

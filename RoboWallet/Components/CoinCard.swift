@@ -59,22 +59,10 @@ struct ListCoinCard: View {
                 .font(.caption)
                 .foregroundColor(Color.secondary)
                 .frame(minWidth: 30)
-//
-//            Image(systemName: "bitcoinsign.circle")
-//                .font(Font.system(size: 30))
-//                .font(Font.body.weight(.bold))
-//                .foregroundColor(Color("yellow"))
-//                .background(
-//                    Circle()
-//                        .fill(Color("yellow").opacity(0.2))
-//                        .frame(width: 60, height: 60)
-//                )
-//                .frame(width: 60, height: 60)
-//                .padding(.trailing, 10)
-
 
             CoinImageView(coin: coin)
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 40)
+                .padding(.trailing)
 
             VStack(alignment: .leading, spacing: 10) {
                 Text(coin.symbol.uppercased())
@@ -86,7 +74,7 @@ struct ListCoinCard: View {
             Spacer()
             VStack(alignment: .trailing) {
                 Text(coin.currentPrice.asCurrencyWith6Decimals())
-                    .font(Font.system(size: 24))
+                    .font(Font.system(size: 20))
                     .font(Font.body.weight(.bold))
                 HStack {
 

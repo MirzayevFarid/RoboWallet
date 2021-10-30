@@ -53,10 +53,14 @@ struct Home: View {
                     }
 
                     // TRENDING
+
                     Text("Trending")
                         .padding(.leading, 25)
                         .font(Font.system(size: 24))
                         .padding(.top, 40)
+
+                    SearchBarView(searchText: $vm.searchText)
+
 
                     ForEach(vm.allCoins) { coin in
                         ListCoinCard(coin: coin)
@@ -66,7 +70,7 @@ struct Home: View {
                     Spacer(minLength: 80)
 
                 }
-                .background(Color("card2"))
+//                .background(Color("card2"))
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .ignoresSafeArea()
             }
