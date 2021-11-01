@@ -5,10 +5,14 @@ struct TabBarView: View {
 
     @State var selectedTab = "Home"
     @Binding var pages: [TabBarPage]
+
+
     init(pages: Binding<[TabBarPage]>) {
         UITabBar.appearance().isHidden = true
         self._pages = pages
     }
+
+
     var body: some View {
         ZStack(alignment: .bottom) {
 

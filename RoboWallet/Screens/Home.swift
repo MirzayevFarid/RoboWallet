@@ -14,8 +14,8 @@ import Firebase
 struct Home: View {
 
     @EnvironmentObject private var userInfo: UserInfo
-    @EnvironmentObject private var vm: HomeViewModel
-
+    @StateObject private var vm = HomeViewModel()
+    
     var body: some View {
 
         VStack(alignment: .leading) {

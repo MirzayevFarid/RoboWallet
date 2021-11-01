@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var userInfo: UserInfo
+
     @State var tabBarPages: [TabBarPage] = [
         TabBarPage(page: Home(), icon: "homekit", tag: "Home", color: .white),
         TabBarPage(page: Market(), icon: "chart.xyaxis.line", tag: "Analyze", color: .white),
