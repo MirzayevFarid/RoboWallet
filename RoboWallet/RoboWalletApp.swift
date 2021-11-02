@@ -13,7 +13,7 @@ import NavigationKit
 struct RoboWalletApp: App {
 
     @StateObject private var userInfo = UserInfo()
-
+    
 
     init(){
         FirebaseApp.configure()

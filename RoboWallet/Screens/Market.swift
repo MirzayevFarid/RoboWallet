@@ -9,17 +9,19 @@
 import SwiftUI
 
 struct Market: View {
-    @StateObject private var vm = HomeViewModel()
+//    @StateObject private var vm = HomeViewModel()
+    @EnvironmentObject private var vm: HomeViewModel
+    @State var searchText: String = ""
 
     var body: some View {
-
             VStack(alignment: .leading){
                     Text("Market")
                         .font(Font.system(size: 32, weight: .bold))
                         .padding()
 
-                SearchBarView(searchText: $vm.searchText)
+                SearchBarView(searchText: self.$searchText)
 
+                HomeStats()
 
                 ScrollView(showsIndicators: false) {
 

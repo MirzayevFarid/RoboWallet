@@ -11,11 +11,15 @@ struct ActionCard: View {
     var name: String
     var icon: String
     var color: String
-    var action: () -> Void
+    var screen: AnyView
+    
 
     var body: some View {
-        HStack {
-            Button(action: action) {
+
+        NavigationStep(type: .sheet, style: .view) {
+            screen
+        } label: {
+            HStack {
                 VStack(alignment: .center, spacing: 20) {
                     Image(systemName: icon)
                         .font(Font.system(size: 30))
@@ -30,8 +34,9 @@ struct ActionCard: View {
                     Text(name)
                         .foregroundColor(.white)
                 }
+                Spacer()
             }
-            Spacer()
         }
+
     }
 }

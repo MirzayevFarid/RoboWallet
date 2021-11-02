@@ -14,7 +14,7 @@ import Firebase
 struct Home: View {
 
     @EnvironmentObject private var userInfo: UserInfo
-    @StateObject private var vm = HomeViewModel()
+    @EnvironmentObject private var vm: HomeViewModel
     
     var body: some View {
 
@@ -28,10 +28,13 @@ struct Home: View {
             HStack(alignment: .top) {
                 Spacer()
                 Spacer()
-                ActionCard(name: "Watchlist", icon: "star", color: "green", action: {})
-                ActionCard(name: "Convert", icon: "repeat", color: "yellow", action: {})
-                ActionCard(name: "Compare", icon: "square.on.square", color: "blue", action: {})
-                ActionCard(name: "Price Alert", icon: "bolt", color: "purple", action: {})
+                ActionCard(name: "Watchlist", icon: "star", color: "green",  screen: AnyView(Converter()))
+
+                ActionCard(name: "Convert", icon: "repeat", color: "yellow", screen: AnyView(Converter()))
+
+                ActionCard(name: "Compare", icon: "square.on.square", color: "blue",  screen: AnyView(Converter()))
+
+                ActionCard(name: "Price Alert", icon: "bolt", color: "purple",  screen: AnyView(Converter()))
             }
 
 
