@@ -11,6 +11,7 @@ struct Converter: View {
     @State private var val1 = "0"
     @State private var val2 = "0"
     @State private var selection = 1
+    @Environment(\.presentationMode) private var presentationMode
 
     var body: some View {
 
@@ -20,14 +21,19 @@ struct Converter: View {
 
             VStack(alignment: .leading) {
                 HStack(spacing: UIScreen.screenWidth / 3.5) {
-                    Image(systemName: "arrow.backward")
-                        .font(Font.body.weight(.bold))
-                        .foregroundColor(Color.white)                        .background(
-                            Circle()
-                                .fill(Color("card"))
-                                .frame(width: 50, height: 50)
-                        )
-                        .padding(.leading)
+
+
+                    NavigationDismissStep(style: .button, presentationMode: presentationMode, label: {
+                        Image(systemName: "arrow.backward")
+                            .font(Font.body.weight(.bold))
+                            .foregroundColor(Color.white)                        .background(
+                                Circle()
+                                    .fill(Color("card"))
+                                    .frame(width: 50, height: 50)
+                            )
+                    })
+                    .padding(.leading)
+
                     Text("Converter")
                 }
                 .padding(.leading)

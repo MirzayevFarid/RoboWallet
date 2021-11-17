@@ -10,12 +10,16 @@ import Foundation
 
 import SwiftUI
 import Firebase
+import SwiftUIGIF
+
 
 struct Home: View {
 
     @EnvironmentObject private var userInfo: UserInfo
-    @EnvironmentObject private var vm: HomeViewModel
-    
+    @StateObject private var vm = HomeViewModel()
+    @State private var selectCoin: CoinModel? = nil
+    @State private var showDetailView: Bool = false
+
     var body: some View {
 
         VStack(alignment: .leading) {
@@ -28,19 +32,41 @@ struct Home: View {
             HStack(alignment: .top) {
                 Spacer()
                 Spacer()
-                ActionCard(name: "Watchlist", icon: "star", color: "green",  screen: AnyView(Converter()))
 
-                ActionCard(name: "Convert", icon: "repeat", color: "yellow", screen: AnyView(Converter()))
+                NavigationStep(type: .sheet, style: .view) {
+                    AddCoin().environmentObject(vm)
+                } label: {
+                    ActionCard(name: "Watchlist", icon: "star", color: "green")
+                }
 
-                ActionCard(name: "Compare", icon: "square.on.square", color: "blue",  screen: AnyView(Converter()))
 
-                ActionCard(name: "Price Alert", icon: "bolt", color: "purple",  screen: AnyView(Converter()))
+                NavigationStep(type: .sheet, style: .view) {
+                    Converter()
+                } label: {
+                    ActionCard(name: "Convert", icon: "repeat", color: "yellow")
+
+                }
+
+                NavigationStep(type: .sheet, style: .view) {
+                    Converter()
+                } label: {
+                    ActionCard(name: "Compare", icon: "square.on.square", color: "blue")
+                }
+
+
+                NavigationStep(type: .sheet, style: .view) {
+                    Converter()
+                } label: {
+                    ActionCard(name: "Price Alert", icon: "bolt", color: "purple")
+                }
             }
 
-
-
-            ScrollView(showsIndicators: false) {
-
+            RefreshableScrollView(action: vm.reloadData) {
+                if vm.isLoading {
+                    GIFImage(name: "btcGif")
+                        .frame(height: 80)
+                        .padding()
+                }
                 VStack(alignment: .leading){
                     // WALLET
                     Text("Your Wallet")
@@ -56,30 +82,39 @@ struct Home: View {
                     }
 
                     // TRENDING
-
                     Text("Trending")
                         .padding(.leading, 25)
                         .font(Font.system(size: 24))
                         .padding(.top, 40)
 
-                    SearchBarView(searchText: $vm.searchText)
 
-
-                    ForEach(vm.allCoins) { coin in
-                        ListCoinCard(coin: coin)
+                    ForEach(Array(self.vm.trendingCoins.enumerated()),
+                            id: \.1.id) { (index, coin) in
+                        ListCoinCard(coin: coin, coinRank: index+1)
+                            .onTapGesture {
+                                segue(coin: coin)
+                            }
                     }.padding(.top)
 
 
                     Spacer(minLength: 80)
 
                 }
-//                .background(Color("card2"))
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .ignoresSafeArea()
             }
         }
         .padding(.vertical)
         .background(BlurredBackground())
+        .background(
+            NavigationLink(
+                destination: DetailLoadingView(coin: $selectCoin),
+                isActive: $showDetailView,
+                label: {
+                    EmptyView()
+                }
+            )
+        )
         .ignoresSafeArea()
         .onAppear {
             guard let uid = Auth.auth().currentUser?.uid else {
@@ -95,12 +130,17 @@ struct Home: View {
             }
         }
     }
+
+
+    private func segue(coin: CoinModel){
+        selectCoin = coin
+        showDetailView.toggle()
+    }
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
-            .environmentObject(HomeViewModel())
             .preferredColorScheme(.dark)
     }
 }

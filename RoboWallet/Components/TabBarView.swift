@@ -6,7 +6,6 @@ struct TabBarView: View {
     @State var selectedTab = "Home"
     @Binding var pages: [TabBarPage]
 
-
     init(pages: Binding<[TabBarPage]>) {
         UITabBar.appearance().isHidden = true
         self._pages = pages
@@ -21,7 +20,8 @@ struct TabBarView: View {
                     AnyView(_fromValue: item.page)
                         .tabItem{
                             EmptyView()
-                        }.tag(item.tag)
+                        }
+                        .tag(item.tag)
                 }
             }
 

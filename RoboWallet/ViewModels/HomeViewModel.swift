@@ -2,22 +2,19 @@
 //  HomeViewModel.swift
 //  RoboWallet
 //
-//  Created by Mirzayev Farid on 27.10.2021.
+//  Created by Mirzayev Farid on 17.11.2021.
 //
 
 import Foundation
 import Combine
+import SwiftUI
 
 class HomeViewModel: ObservableObject {
 
-    @Published var allCoins: [CoinModel] = []
-    @Published var filteredCoins: [CoinModel] = []
-    @Published var portfolioCoins: [CoinModel] = []
-    @Published var statistics: [StatisticModel] = []
-    @Published var searchText: String = ""
+    @Published var trendingCoins: [CoinModel] = []
+    @Published var isLoading: Bool = false
 
     private let coinDataService = CoinDataService()
-    private let marketDataService = MarketDataService()
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -26,83 +23,24 @@ class HomeViewModel: ObservableObject {
     }
 
     func addSubscribers() {
-
-        // updates allCoins
-        $searchText
-            .combineLatest(coinDataService.$allCoins)
-            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .map(filterCoins)
+        coinDataService.$allCoins
             .sink { [weak self] (returnedCoins) in
-                self?.allCoins = returnedCoins
-            }
-            .store(in: &cancellables)
+                self?.trendingCoins = returnedCoins.sorted(by: {$0.priceChangePercentage24H ?? 0 > $1.priceChangePercentage24H ?? 0} )
 
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation(.default){
+                        self?.isLoading = false
+                    }
+                }
 
-        // updates marketData
-        marketDataService.$marketData
-            .combineLatest($portfolioCoins)
-            .map(mapGlobalMarketData)
-            .sink { [weak self] (returnedStats) in
-                self?.statistics = returnedStats
             }
             .store(in: &cancellables)
     }
 
-    private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
-        guard !text.isEmpty else {
-            return coins
-        }
-
-        let lowercasedText = text.lowercased()
-
-        return coins.filter { (coin) -> Bool in
-            return coin.name.lowercased().contains(lowercasedText) ||
-            coin.symbol.lowercased().contains(lowercasedText) ||
-            coin.id.lowercased().contains(lowercasedText)
-        }
+    func reloadData() {
+        isLoading = true
+        coinDataService.getCoins()
+        HapticManager.notification(type: .success)
     }
 
-    private func mapGlobalMarketData(marketDataModel: MarketDataModel?, portfolioCoins: [CoinModel]) -> [StatisticModel] {
-        var stats: [StatisticModel] = []
-
-        guard let data = marketDataModel else {
-            return stats
-        }
-
-        let marketCap = StatisticModel(title: "Market Cap", value: data.marketCap, percentageChange: data.marketCapChangePercentage24HUsd)
-        let volume = StatisticModel(title: "24h Volume", value: data.volume)
-        let btcDominance = StatisticModel(title: "BTC Dominance", value: data.btcDominance)
-
-        let portfolioValue =
-        portfolioCoins
-            .map({ $0.currentHoldingsValue })
-            .reduce(0, +)
-
-        let previousValue =
-        portfolioCoins
-            .map { (coin) -> Double in
-                let currentValue = coin.currentHoldingsValue
-                let percentChange = coin.priceChangePercentage24H ?? 0 / 100
-                let previousValue = currentValue / (1 + percentChange)
-                return previousValue
-            }
-            .reduce(0, +)
-
-        let percentageChange = ((portfolioValue - previousValue) / previousValue)
-
-        let portfolio = StatisticModel(
-            title: "Portfolio Value",
-            value: portfolioValue.asCurrencyWith2Decimals(),
-            percentageChange: percentageChange)
-
-        stats.append(contentsOf: [
-            marketCap,
-            volume,
-            btcDominance,
-            portfolio
-        ])
-        return stats
-    }
-
-    
 }

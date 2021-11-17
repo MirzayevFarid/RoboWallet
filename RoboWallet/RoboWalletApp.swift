@@ -27,7 +27,6 @@ struct RoboWalletApp: App {
             .environmentObject(userInfo)
             .statusBar(hidden: true)
             .navigationBarHidden(true)
-
         }
     }
 }

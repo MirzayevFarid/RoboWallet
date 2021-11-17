@@ -52,10 +52,11 @@ struct CoinCard: View {
 
 struct ListCoinCard: View {
     var coin: CoinModel
+    var coinRank: Int?
     var body: some View {
 
         HStack(alignment: .center) {
-            Text("\(coin.rank)")
+            Text("\(coinRank ?? coin.rank)")
                 .font(.caption)
                 .foregroundColor(Color.secondary)
                 .frame(minWidth: 30)
@@ -93,5 +94,8 @@ struct ListCoinCard: View {
         }
         .padding(.vertical, 5)
         .padding(.horizontal, 20)
+        .background(
+            Color.white.opacity(0.001)
+        )
     }
 }

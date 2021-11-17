@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeStats: View {
 
-    @EnvironmentObject private var vm: HomeViewModel
+    @EnvironmentObject private var vm: MarketViewModel
 
     var body: some View {
         HStack {

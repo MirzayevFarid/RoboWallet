@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var userInfo: UserInfo
-    @StateObject private var vm = HomeViewModel()
 
     @State var tabBarPages: [TabBarPage] = [
         TabBarPage(page: Home(), icon: "homekit", tag: "Home", color: .white),
@@ -27,7 +26,6 @@ struct ContentView: View {
                 Login()
             } else {
                 TabBarView(pages: $tabBarPages)
-                    .environmentObject(vm)
             }
         }
         .onAppear {
