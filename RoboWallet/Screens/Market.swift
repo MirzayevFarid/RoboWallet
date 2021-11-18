@@ -10,6 +10,7 @@ import SwiftUI
 import SwiftUIGIF
 
 
+
 struct Market: View {
     @StateObject private var vm = MarketViewModel()
     @State private var selectCoin: CoinModel? = nil
@@ -24,6 +25,8 @@ struct Market: View {
             SearchBarView(searchText: $vm.searchText)
 
             HomeStats().environmentObject(vm)
+                .redacted(reason: (vm.allCoins.count == 0 || vm.isLoading) ? .placeholder : [])
+
 
             RefreshableScrollView(action: vm.reloadData) {
                 if vm.isLoading {
@@ -38,8 +41,11 @@ struct Market: View {
                         }
                 }.padding(.top)
                 Spacer(minLength: 80)
+            }
+            .redacted(reason: (vm.allCoins.count == 0 || vm.isLoading) ? .placeholder : [])
 
-            }.ignoresSafeArea()
+            .ignoresSafeArea()
+
         }
         .padding(.vertical)
         .background(BlurredBackground())

@@ -36,7 +36,7 @@ struct Detail: View {
     }
 
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
 
                 CoinChart(coin: vm.coin)
@@ -56,7 +56,7 @@ struct Detail: View {
             }
         }
         .background(
-            Color.clear
+            BlurredBackground()
                 .ignoresSafeArea()
         )
         .navigationTitle(vm.coin.name)
@@ -85,7 +85,6 @@ extension Detail {
         Text("Overview")
             .font(.title)
             .bold()
-            .foregroundColor(Color("Purple"))
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
@@ -93,7 +92,6 @@ extension Detail {
         Text("Additional Details")
             .font(.title)
             .bold()
-            .foregroundColor(Color("Purple"))
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 

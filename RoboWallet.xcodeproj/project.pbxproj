@@ -34,7 +34,6 @@
 		DB801E032733065B00580CE6 /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB801E022733065B00580CE6 /* XMarkButton.swift */; };
 		DB801E052733068600580CE6 /* CoinLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB801E042733068600580CE6 /* CoinLogo.swift */; };
 		DB8350BB2745607F0068D307 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8350BA2745607F0068D307 /* HomeViewModel.swift */; };
-		DB8350C1274573000068D307 /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = DB8350C0274573000068D307 /* SwiftUIPullToRefresh */; };
 		DB8350C6274588740068D307 /* SwiftUIGIF in Frameworks */ = {isa = PBXBuildFile; productRef = DB8350C5274588740068D307 /* SwiftUIGIF */; };
 		DB8350C827458A680068D307 /* btcGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = DB8350C727458A680068D307 /* btcGif.gif */; };
 		DB8C67BB27221DFD0006BF1B /* RoboWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67BA27221DFD0006BF1B /* RoboWalletApp.swift */; };
@@ -154,7 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				891875ACC85279C79A2E4C45 /* Pods_RoboWallet.framework in Frameworks */,
-				DB8350C1274573000068D307 /* SwiftUIPullToRefresh in Frameworks */,
 				DB7112772727488E00D8E607 /* NavigationKit in Frameworks */,
 				DB8350C6274588740068D307 /* SwiftUIGIF in Frameworks */,
 			);
@@ -380,7 +378,6 @@
 			name = RoboWallet;
 			packageProductDependencies = (
 				DB7112762727488E00D8E607 /* NavigationKit */,
-				DB8350C0274573000068D307 /* SwiftUIPullToRefresh */,
 				DB8350C5274588740068D307 /* SwiftUIGIF */,
 			);
 			productName = RoboWallet;
@@ -413,7 +410,6 @@
 			mainGroup = DB8C67AE27221DFD0006BF1B;
 			packageReferences = (
 				DB7112752727488E00D8E607 /* XCRemoteSwiftPackageReference "NavigationKit" */,
-				DB8350BF274573000068D307 /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */,
 				DB8350C4274588740068D307 /* XCRemoteSwiftPackageReference "swiftui-gif" */,
 			);
 			productRefGroup = DB8C67B827221DFD0006BF1B /* Products */;
@@ -759,14 +755,6 @@
 				kind = branch;
 			};
 		};
-		DB8350BF274573000068D307 /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/globulus/swiftui-pull-to-refresh";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		DB8350C4274588740068D307 /* XCRemoteSwiftPackageReference "swiftui-gif" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/globulus/swiftui-gif.git";
@@ -782,11 +770,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB7112752727488E00D8E607 /* XCRemoteSwiftPackageReference "NavigationKit" */;
 			productName = NavigationKit;
-		};
-		DB8350C0274573000068D307 /* SwiftUIPullToRefresh */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DB8350BF274573000068D307 /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */;
-			productName = SwiftUIPullToRefresh;
 		};
 		DB8350C5274588740068D307 /* SwiftUIGIF */ = {
 			isa = XCSwiftPackageProductDependency;

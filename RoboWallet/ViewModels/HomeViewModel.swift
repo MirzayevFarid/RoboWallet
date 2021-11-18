@@ -14,11 +14,13 @@ class HomeViewModel: ObservableObject {
     @Published var trendingCoins: [CoinModel] = []
     @Published var isLoading: Bool = false
 
-    private let coinDataService = CoinDataService()
+    private let coinDataService: CoinDataService
 
     private var cancellables = Set<AnyCancellable>()
 
     init() {
+        isLoading = true
+        coinDataService = CoinDataService()
         addSubscribers()
     }
 
@@ -35,6 +37,8 @@ class HomeViewModel: ObservableObject {
 
             }
             .store(in: &cancellables)
+        isLoading = false
+
     }
 
     func reloadData() {

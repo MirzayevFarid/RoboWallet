@@ -20,17 +20,20 @@ class MarketViewModel: ObservableObject {
     @Published var isLoading: Bool = false
 
 
-    private let coinDataService = CoinDataService()
-    private let marketDataService = MarketDataService()
+    private let coinDataService: CoinDataService
+    private let marketDataService: MarketDataService
 
     private var cancellables = Set<AnyCancellable>()
 
     init() {
+        isLoading = true
+        coinDataService = CoinDataService()
+        marketDataService = MarketDataService()
         addSubscribers()
+        isLoading = false
     }
 
     func addSubscribers() {
-
         // updates allCoins
         $searchText
             .combineLatest(coinDataService.$allCoins)
@@ -63,10 +66,11 @@ class MarketViewModel: ObservableObject {
         isLoading = true
         coinDataService.getCoins()
         marketDataService.getData()
-        HapticManager.notification(type: .success)
+        HapticManager.notification(type: .warning)
     }
 
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {
+
         guard !text.isEmpty else {
             return coins
         }

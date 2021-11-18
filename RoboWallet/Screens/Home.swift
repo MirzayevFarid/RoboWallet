@@ -103,6 +103,9 @@ struct Home: View {
                 .cornerRadius(40, corners: [.topLeft, .topRight])
                 .ignoresSafeArea()
             }
+            .redacted(reason: vm.trendingCoins.count == 0 || vm.isLoading ? .placeholder : [])
+
+
         }
         .padding(.vertical)
         .background(BlurredBackground())
