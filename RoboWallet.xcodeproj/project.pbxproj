@@ -29,6 +29,7 @@
 		DB71127C2727496400D8E607 /* FBFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71127B2727496400D8E607 /* FBFireStore.swift */; };
 		DB71127E2727496D00D8E607 /* FBFireStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71127D2727496D00D8E607 /* FBFireStoreError.swift */; };
 		DB7112802727497500D8E607 /* FBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB71127F2727497500D8E607 /* FBKeys.swift */; };
+		DB7533C0274922F1008753CC /* AddPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7533BF274922F1008753CC /* AddPortfolio.swift */; };
 		DB77E6DB27260145009AE52C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77E6DA27260144009AE52C /* UserInfo.swift */; };
 		DB801E012733016700580CE6 /* AddCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB801E002733016700580CE6 /* AddCoin.swift */; };
 		DB801E032733065B00580CE6 /* XMarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB801E022733065B00580CE6 /* XMarkButton.swift */; };
@@ -67,6 +68,7 @@
 		DBF446F627459D310088E868 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF446F527459D310088E868 /* Date.swift */; };
 		DBF446F827459DF50088E868 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF446F727459DF50088E868 /* String.swift */; };
 		DBF446FA27459E1F0088E868 /* CoinChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF446F927459E1F0088E868 /* CoinChart.swift */; };
+		DBF446FF27468FAD0088E868 /* CoinConversionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF446FE27468FAD0088E868 /* CoinConversionService.swift */; };
 		DBFCC475272332D200C399DE /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCC474272332D100C399DE /* PrimaryButton.swift */; };
 		DBFCC47727237C3D00C399DE /* CustomInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCC47627237C3D00C399DE /* CustomInput.swift */; };
 		DBFCC47A27237CDA00C399DE /* BlurredBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCC47927237CDA00C399DE /* BlurredBackground.swift */; };
@@ -101,6 +103,7 @@
 		DB71127B2727496400D8E607 /* FBFireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFireStore.swift; sourceTree = "<group>"; };
 		DB71127D2727496D00D8E607 /* FBFireStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFireStoreError.swift; sourceTree = "<group>"; };
 		DB71127F2727497500D8E607 /* FBKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBKeys.swift; sourceTree = "<group>"; };
+		DB7533BF274922F1008753CC /* AddPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPortfolio.swift; sourceTree = "<group>"; };
 		DB77E6DA27260144009AE52C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		DB801E002733016700580CE6 /* AddCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoin.swift; sourceTree = "<group>"; };
 		DB801E022733065B00580CE6 /* XMarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMarkButton.swift; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 		DBF446F527459D310088E868 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DBF446F727459DF50088E868 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		DBF446F927459E1F0088E868 /* CoinChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinChart.swift; sourceTree = "<group>"; };
+		DBF446FE27468FAD0088E868 /* CoinConversionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinConversionService.swift; sourceTree = "<group>"; };
 		DBFCC474272332D100C399DE /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		DBFCC47627237C3D00C399DE /* CustomInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInput.swift; sourceTree = "<group>"; };
 		DBFCC47927237CDA00C399DE /* BlurredBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredBackground.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				DB4D10752729FDFA0016AFC9 /* CoinImageService.swift */,
 				DB31433827315ED4006E7711 /* MarketDataService.swift */,
 				DBF446F327459B130088E868 /* CoinDetailDataService.swift */,
+				DBF446FE27468FAD0088E868 /* CoinConversionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				DB31433E27316E0F006E7711 /* Converter.swift */,
 				DB801E002733016700580CE6 /* AddCoin.swift */,
 				DBF446ED274595490088E868 /* Detail.swift */,
+				DB7533BF274922F1008753CC /* AddPortfolio.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				DB31433F27316E0F006E7711 /* Converter.swift in Sources */,
 				DB8C67BD27221DFD0006BF1B /* Login.swift in Sources */,
 				DB31433927315ED4006E7711 /* MarketDataService.swift in Sources */,
+				DB7533C0274922F1008753CC /* AddPortfolio.swift in Sources */,
 				DBBE3AB7272751A6004A988D /* Profile.swift in Sources */,
 				DBE3A8512724C37100DE680A /* ActionCard.swift in Sources */,
 				DBC80EC527273EB600B6291F /* FBAuthError.swift in Sources */,
@@ -518,6 +525,7 @@
 				DB77E6DB27260145009AE52C /* UserInfo.swift in Sources */,
 				DBE57E61272DF6A3005490D4 /* SearchBarView.swift in Sources */,
 				DB4D1078272A03660016AFC9 /* CoinImageViewModel.swift in Sources */,
+				DBF446FF27468FAD0088E868 /* CoinConversionService.swift in Sources */,
 				DB4D106E2729E85E0016AFC9 /* CoinDataService.swift in Sources */,
 				DBF446FA27459E1F0088E868 /* CoinChart.swift in Sources */,
 				DB71127A2727495300D8E607 /* FBUser.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 import SwiftUI
 
-struct AddCoin: View {
+struct AddCoin2: View {
 
     @EnvironmentObject private var vm: MarketViewModel
     @State private var selectedCoin: CoinModel? = nil
@@ -43,18 +43,17 @@ struct AddCoin: View {
                 }
             })
         }
-
     }
 }
 
-struct AddCoin_Previews: PreviewProvider {
+struct AddCoin2_Previews: PreviewProvider {
     static var previews: some View {
-        AddCoin()
+        AddCoin2().environmentObject(MarketViewModel())
     }
 }
 
 
-extension AddCoin {
+extension AddCoin2 {
 
     private var coinLogoList: some View {
         ScrollView(.horizontal, showsIndicators: false, content: {

@@ -50,7 +50,7 @@ struct CoinCard: View {
 }
 
 
-struct ListCoinCard: View {
+struct MainListCoinCard: View {
     var coin: CoinModel
     var coinRank: Int?
     var body: some View {
@@ -85,6 +85,59 @@ struct ListCoinCard: View {
                     :
                         Text("▼").font(Font.body.weight(.bold))
                             .foregroundColor(.red)
+
+                    Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
+                        .font(Font.body.weight(.bold))
+                        .foregroundColor(.gray)
+                }
+            }
+        }
+        .padding(.vertical, 5)
+        .padding(.horizontal, 20)
+        .background(
+            Color.white.opacity(0.001)
+        )
+    }
+}
+
+
+struct WalletListCoinCard: View {
+    var coin: CoinModel
+    var coinRank: Int?
+    var body: some View {
+
+        HStack(alignment: .center) {
+            Text("\(coinRank ?? coin.rank)")
+                .font(.caption)
+                .foregroundColor(Color.secondary)
+                .frame(minWidth: 30)
+
+            CoinImageView(coin: coin)
+                .frame(width: 40, height: 40)
+                .padding(.trailing)
+
+            VStack(alignment: .leading, spacing: 5) {
+                Text(coin.symbol.uppercased())
+                    .font(Font.body.weight(.bold))
+                Text(coin.currentPrice.asCurrencyWith6Decimals())
+                    .font(Font.system(size: 16))
+                    .foregroundColor(.gray)
+                    .font(Font.body.weight(.bold))
+            }
+
+            Spacer()
+            VStack(alignment: .trailing, spacing: 5) {
+                Text(coin.currentPrice.asCurrencyWith6Decimals())
+                    .font(Font.system(size: 20))
+                    .font(Font.body.weight(.bold))
+                HStack {
+
+                    (coin.priceChangePercentage24H ?? 0) >= 0 ?
+                    Text("▲").font(Font.body.weight(.bold))
+                        .foregroundColor(.green)
+                    :
+                    Text("▼").font(Font.body.weight(.bold))
+                        .foregroundColor(.red)
 
                     Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
                         .font(Font.body.weight(.bold))

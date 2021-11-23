@@ -28,5 +28,4 @@ class MarketDataService {
                 self?.marketDataSubscription?.cancel()
             })
     }
-
 }

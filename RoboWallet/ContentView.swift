@@ -14,7 +14,7 @@ struct ContentView: View {
         TabBarPage(page: Home(), icon: "homekit", tag: "Home", color: .white),
         TabBarPage(page: Market(), icon: "chart.xyaxis.line", tag: "Analyze", color: .white),
         TabBarPage(page: Home(), icon: "bitcoinsign.circle", tag: "Profil", color: .white),
-        TabBarPage(page: Home(), icon: "newspaper", tag: "News", color: .white),
+        TabBarPage(page: Converter(), icon: "repeat", tag: "Conversion", color: .white),
         TabBarPage(page: Profile(), icon: "person", tag: "Profile", color: .white),
     ]
     

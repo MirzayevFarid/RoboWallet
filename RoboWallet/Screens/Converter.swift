@@ -49,7 +49,17 @@ struct Converter: View {
             }.ignoresSafeArea()
 
         }
+        .onTapGesture {
+            hideKeyboard()
+        }
         .ignoresSafeArea()
+    }
+}
+
+extension View {
+    func hideKeyboard() {
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
     }
 }
 
@@ -182,6 +192,7 @@ struct CoinsView: View {
                     text: $val1
                 )
                     .onTapGesture {
+                        hideKeyboard()
                         selection = 1
                     }
                 .multilineTextAlignment(.center)
@@ -218,6 +229,8 @@ struct CoinsView: View {
                     val2,
                     text: $val2
                 ).onTapGesture {
+                    hideKeyboard()
+
                     selection = 2
                 }
 
@@ -233,4 +246,5 @@ struct CoinsView: View {
         .padding()
         .padding(.top, 50)
     }
+
 }

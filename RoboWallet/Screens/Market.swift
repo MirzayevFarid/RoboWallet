@@ -35,7 +35,7 @@ struct Market: View {
                         .padding()
                 }
                 ForEach(vm.allCoins) { coin in
-                    ListCoinCard(coin: coin)
+                    MainListCoinCard(coin: coin)
                         .onTapGesture {
                             segue(coin: coin)
                         }

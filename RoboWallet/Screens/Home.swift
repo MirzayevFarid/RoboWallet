@@ -34,7 +34,7 @@ struct Home: View {
                 Spacer()
 
                 NavigationStep(type: .sheet, style: .view) {
-                    AddCoin().environmentObject(vm)
+                    Converter()
                 } label: {
                     ActionCard(name: "Watchlist", icon: "star", color: "green")
                 }
@@ -76,7 +76,12 @@ struct Home: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(coinList, id: \.self) { coin in
-                                CoinWalletCard(coin: coin)
+                                NavigationStep(type: .sheet, style: .view) {
+                                    AddPortfolio()
+                                } label: {
+                                    CoinWalletCard(coin: coin)
+                                }
+
                             }
                         }
                     }
@@ -90,7 +95,7 @@ struct Home: View {
 
                     ForEach(Array(self.vm.trendingCoins.enumerated()),
                             id: \.1.id) { (index, coin) in
-                        ListCoinCard(coin: coin, coinRank: index+1)
+                        MainListCoinCard(coin: coin, coinRank: index+1)
                             .onTapGesture {
                                 segue(coin: coin)
                             }
