@@ -87,6 +87,7 @@ struct Home: View {
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
+
                             ForEach(fs.portfolios, id: \.id) { item in
                                 CoinWalletCard(portfolio: item)
                             }
