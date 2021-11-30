@@ -13,7 +13,7 @@ struct ContentView: View {
     @State var tabBarPages: [TabBarPage] = [
         TabBarPage(page: Home(), icon: "homekit", tag: "Home", color: .white),
         TabBarPage(page: Market(), icon: "chart.xyaxis.line", tag: "Analyze", color: .white),
-        TabBarPage(page: Home(), icon: "bitcoinsign.circle", tag: "Profil", color: .white),
+        TabBarPage(page: Wallet(), icon: "bitcoinsign.circle", tag: "Profil", color: .white),
         TabBarPage(page: Converter(), icon: "repeat", tag: "Conversion", color: .white),
         TabBarPage(page: Profile(), icon: "person", tag: "Profile", color: .white),
     ]

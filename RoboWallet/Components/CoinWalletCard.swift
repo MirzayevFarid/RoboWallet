@@ -8,37 +8,33 @@
 import SwiftUI
 
 struct CoinWalletCard: View {
-    var coin: coinSample
+    var portfolio: PortfolioModel
+
     var body: some View {
-
         ZStack {
-
-
             Color.white.opacity(0.05)
                 .blur(radius: 20)
 
-
             HStack(alignment: .top, spacing: 80) {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(coin.name).font(Font.body.weight(.bold))
-                    Text(coin.name + " 0.55")
-                    Text(coin.price)
+                    Text(portfolio.portfolioName).font(Font.body.weight(.bold))
+                    Text("\(portfolio.totalPortfolioValue)")
                         .font(Font.system(size: 28))
                         .font(Font.body.weight(.bold))
                 }
                 VStack(spacing: 10) {
-                    Image(systemName: coin.image)
+                    Image(systemName: "bitcoinsign.circle")
                         .font(Font.system(size: 25))
                         .font(Font.body.weight(.bold))
-                        .foregroundColor(Color("yellow"))
+                        .foregroundColor(Color(hex: "#\(portfolio.portfolioColor)"))
                         .background(
                             Circle()
-                                .fill(Color("yellow").opacity(0.2))
+                                .fill(Color(hex: "#\(portfolio.portfolioColor)").opacity(0.2))
                                 .frame(width: 50, height: 50)
                         )
                     HStack {
                         Text("^").font(Font.body.weight(.bold))
-                        Text(coin.rate).font(Font.body.weight(.bold))
+                        Text("\(portfolio.totalChangeRate.asPercentString())").font(Font.body.weight(.bold))
                     }.padding(.vertical)
                 }
                 .padding(.top, 15)
@@ -60,9 +56,7 @@ struct CoinWalletCard: View {
 struct BlankPortfolioCard: View {
 
     @Binding var portfolioName: String
-    @Binding var portfolioColor: UIColor
-
-
+    @Binding var portfolioColor: String
 
     var body: some View {
 
@@ -105,13 +99,13 @@ struct BlankPortfolioCard: View {
                                         hideKeyboard()
 
                                     withAnimation(.default, {
-                                        portfolioColor = colors
+                                        portfolioColor = colors.toHexString()
                                     })
 
                                 })
                                 .padding(10)
 
-                            if portfolioColor == colors {
+                            if portfolioColor == colors.toHexString() {
                                 Circle()
                                     .stroke(Color(colors), lineWidth: 5)
                                     .frame(width: 50, height: 50)

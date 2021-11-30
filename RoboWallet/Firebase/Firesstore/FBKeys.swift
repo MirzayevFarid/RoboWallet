@@ -11,13 +11,23 @@ enum FBKeys {
 
     enum CollectionPath {
         static let users = "users"
+        static let portfolios = "Portfolios"
     }
 
     enum User {
         static let uid = "uid"
         static let name = "name"
         static let email = "email"
-
-        // Add app specific keys here
     }
+
+    enum Portfolio {
+        static let portfolioId = "portfolioId"
+        static let portfolioName = "portfolioName"
+        static let portfolioColor = "portfolioColor"
+        static let portfolioCoins = "portfolioCoins"
+        static let totalPortfolioValue = "totalPortfolioValue"
+        static let totalChangeRate = "totalChangeRate"
+
+    }
+
 }

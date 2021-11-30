@@ -11,8 +11,16 @@ import SwiftUIGIF
 
 struct AddPortfolio: View {
 
+    @EnvironmentObject private var fs: FirestoreManager
+
     @State var portfolioName: String = ""
-    @State var portfolioColor: UIColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+    @State var portfolioColor: String = "2D7FC1"
+
+    @State var newPortfolio: PortfolioModel = PortfolioModel(portfolioName: "New Portfolio", portfolioColor: "2D7FC1")
+
+
+    @EnvironmentObject var userInfo: UserInfo
+
     @Environment(\.presentationMode) private var presentationMode
 
 
@@ -20,9 +28,7 @@ struct AddPortfolio: View {
         ZStack(alignment: .top){
             BlurredBackground().ignoresSafeArea()
 
-
             VStack{
-
                 Text("Create New Portfolio")
                     .padding()
 
@@ -30,28 +36,36 @@ struct AddPortfolio: View {
                     .padding(.trailing)
                     .frame(height: 350)
 
-
-
                 PrimaryButton(text: "Save") {
                     presentationMode.wrappedValue.dismiss()
-                
-                }.padding(.horizontal)
+
+                    portfolioName = portfolioName.isEmpty ? portfolioName : "New Portfolio"
+                    newPortfolio = PortfolioModel(portfolioName: portfolioName, portfolioColor: portfolioColor)
+
+                    FirestoreManager.addPortfolio(uid: userInfo.user.uid, newPortfolio: newPortfolio) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            print("Error Occured While Adding New Portolio")
+                            print(error.localizedDescription)
+                        case .success( _):
+                            print("Added New Portfolio")
+                        }
+                    }
+                    fs.portfolios.append(newPortfolio)
 
 
-
+                }
             }
-
-
-        }
-        .onTapGesture{
-            hideKeyboard()
+            .onTapGesture{
+                hideKeyboard()
+            }
         }
     }
 }
 
-struct AddPortfolio_Previews: PreviewProvider {
-    static var previews: some View {
-        AddPortfolio()
-            .preferredColorScheme(.dark)
-    }
-}
+//struct AddPortfolio_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddPortfolio()
+//            .preferredColorScheme(.dark)
+//    }
+//}

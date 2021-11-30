@@ -17,6 +17,7 @@ struct Home: View {
 
     @EnvironmentObject private var userInfo: UserInfo
     @StateObject private var vm = HomeViewModel()
+    @StateObject private var fs = FirestoreManager()
     @State private var selectCoin: CoinModel? = nil
     @State private var showDetailView: Bool = false
 
@@ -69,21 +70,27 @@ struct Home: View {
                 }
                 VStack(alignment: .leading){
                     // WALLET
-                    Text("Your Wallet")
-                        .padding(25)
-                        .font(Font.system(size: 24))
+                    HStack{
+                        Text("Your Portfolios")
+                            .padding(25)
+                            .font(Font.system(size: 24))
+                        Spacer()
+
+                        NavigationStep(type: .sheet, style: .view) {
+                            AddPortfolio()
+                                .environmentObject(fs)
+                        } label: {
+                            Image(systemName: "plus.rectangle.on.rectangle")
+                                .padding(.trailing, 20)
+                        }
+                    }
 
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(coinList, id: \.self) { coin in
-                                NavigationStep(type: .sheet, style: .view) {
-                                    AddPortfolio()
-                                } label: {
-                                    CoinWalletCard(coin: coin)
-                                }
-
+                            ForEach(fs.portfolios, id: \.id) { item in
+                                CoinWalletCard(portfolio: item)
                             }
-                        }
+                        }.padding(.trailing)
                     }
 
                     // TRENDING
@@ -109,8 +116,6 @@ struct Home: View {
                 .ignoresSafeArea()
             }
             .redacted(reason: vm.trendingCoins.count == 0 || vm.isLoading ? .placeholder : [])
-
-
         }
         .padding(.vertical)
         .background(BlurredBackground())
@@ -128,6 +133,10 @@ struct Home: View {
             guard let uid = Auth.auth().currentUser?.uid else {
                 return
             }
+
+            fs.fetchPortfolios(uid: uid)
+
+
             FBFirestore.retrieveFBUser(uid: uid) { (result) in
                 switch result {
                 case .failure(let error):

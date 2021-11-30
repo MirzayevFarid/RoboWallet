@@ -27,7 +27,6 @@ enum FBFirestore {
                 completion(.failure(err))
             }
         }
-
     }
 
     static func mergeFBUser(_ data: [String: Any], uid: String, completion: @escaping (Result<Bool, Error>) -> ()) {

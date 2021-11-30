@@ -22,7 +22,6 @@ class CoinConversionService {
         guard let supportedCurrencies = URL(string: "https://api.coingecko.com/api/v3/simple/supported_vs_currencies") else { return }
 
         supportedCoinsSubscription = NetworkingManager.download(url: supportedCurrencies)
-//        [String: Decodable].self
             .decode(type: [String].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (returnedsupportedCurrencies) in

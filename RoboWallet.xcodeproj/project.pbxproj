@@ -13,6 +13,10 @@
 		DB31433B27315F25006E7711 /* MarketDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31433A27315F25006E7711 /* MarketDataModel.swift */; };
 		DB31433D27316012006E7711 /* HomeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31433C27316012006E7711 /* HomeStats.swift */; };
 		DB31433F27316E0F006E7711 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB31433E27316E0F006E7711 /* Converter.swift */; };
+		DB33B29B274E606D003E7457 /* PortfolioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33B29A274E606D003E7457 /* PortfolioModel.swift */; };
+		DB33B29D274E86EB003E7457 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33B29C274E86EB003E7457 /* FirestoreService.swift */; };
+		DB44F4F3275143CA00CEB462 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44F4F2275143CA00CEB462 /* UIColor.swift */; };
+		DB44F4F527559E1C00CEB462 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44F4F427559E1C00CEB462 /* Wallet.swift */; };
 		DB458AF02728681600BB2E8C /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB458AEF2728681600BB2E8C /* Market.swift */; };
 		DB458AF227289D1100BB2E8C /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB458AF127289D1100BB2E8C /* SegmentedPicker.swift */; };
 		DB4D10612729DF750016AFC9 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D10602729DF750016AFC9 /* CoinModel.swift */; };
@@ -88,6 +92,10 @@
 		DB31433A27315F25006E7711 /* MarketDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataModel.swift; sourceTree = "<group>"; };
 		DB31433C27316012006E7711 /* HomeStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStats.swift; sourceTree = "<group>"; };
 		DB31433E27316E0F006E7711 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		DB33B29A274E606D003E7457 /* PortfolioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioModel.swift; sourceTree = "<group>"; };
+		DB33B29C274E86EB003E7457 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		DB44F4F2275143CA00CEB462 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		DB44F4F427559E1C00CEB462 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		DB458AEF2728681600BB2E8C /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		DB458AF127289D1100BB2E8C /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		DB4D10602729DF750016AFC9 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
@@ -192,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				DB4D10602729DF750016AFC9 /* CoinModel.swift */,
+				DB33B29A274E606D003E7457 /* PortfolioModel.swift */,
 				DB31433627315DF2006E7711 /* StatisticModel.swift */,
 				DB31433A27315F25006E7711 /* MarketDataModel.swift */,
 				DBF446EF27459A760088E868 /* CoinDetailModel.swift */,
@@ -206,6 +215,7 @@
 				DBE57E62272DF758005490D4 /* UIApplication.swift */,
 				DBF446F527459D310088E868 /* Date.swift */,
 				DBF446F727459DF50088E868 /* String.swift */,
+				DB44F4F2275143CA00CEB462 /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -229,6 +239,7 @@
 				DB31433827315ED4006E7711 /* MarketDataService.swift */,
 				DBF446F327459B130088E868 /* CoinDetailDataService.swift */,
 				DBF446FE27468FAD0088E868 /* CoinConversionService.swift */,
+				DB33B29C274E86EB003E7457 /* FirestoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -338,6 +349,7 @@
 				DB801E002733016700580CE6 /* AddCoin.swift */,
 				DBF446ED274595490088E868 /* Detail.swift */,
 				DB7533BF274922F1008753CC /* AddPortfolio.swift */,
+				DB44F4F427559E1C00CEB462 /* Wallet.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -503,10 +515,14 @@
 				DB31433D27316012006E7711 /* HomeStats.swift in Sources */,
 				DBE57E63272DF758005490D4 /* UIApplication.swift in Sources */,
 				DBE3A84B272475C300DE680A /* MockData.swift in Sources */,
+				DB44F4F527559E1C00CEB462 /* Wallet.swift in Sources */,
 				DBE3A847272461BF00DE680A /* Home.swift in Sources */,
 				DB31433B27315F25006E7711 /* MarketDataModel.swift in Sources */,
 				DB8C67BB27221DFD0006BF1B /* RoboWalletApp.swift in Sources */,
+				DB33B29B274E606D003E7457 /* PortfolioModel.swift in Sources */,
+				DB33B29D274E86EB003E7457 /* FirestoreService.swift in Sources */,
 				DBF446F027459A760088E868 /* CoinDetailModel.swift in Sources */,
+				DB44F4F3275143CA00CEB462 /* UIColor.swift in Sources */,
 				DBC80EBE27273BB700B6291F /* SignInWithAppleButtonView.swift in Sources */,
 				DB801E032733065B00580CE6 /* XMarkButton.swift in Sources */,
 				DBC80EBC27273A0D00B6291F /* UserViewModel.swift in Sources */,

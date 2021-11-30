@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct AddCoin2: View {
 
     @EnvironmentObject private var vm: MarketViewModel

@@ -12,11 +12,15 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
 
     @Published var trendingCoins: [CoinModel] = []
+    @Published var portfolios: [PortfolioModel] = []
     @Published var isLoading: Bool = false
 
     private let coinDataService: CoinDataService
 
     private var cancellables = Set<AnyCancellable>()
+
+    @EnvironmentObject var userInfo: UserInfo
+
 
     init() {
         isLoading = true
@@ -38,7 +42,6 @@ class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         isLoading = false
-
     }
 
     func reloadData() {
@@ -46,5 +49,4 @@ class HomeViewModel: ObservableObject {
         coinDataService.getCoins()
         HapticManager.notification(type: .success)
     }
-
 }
