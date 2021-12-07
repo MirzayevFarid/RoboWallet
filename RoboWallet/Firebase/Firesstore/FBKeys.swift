@@ -20,14 +20,10 @@ enum FBKeys {
         static let email = "email"
     }
 
+
     enum Portfolio {
-        static let portfolioId = "portfolioId"
-        static let portfolioName = "portfolioName"
-        static let portfolioColor = "portfolioColor"
-        static let portfolioCoins = "portfolioCoins"
-        static let totalPortfolioValue = "totalPortfolioValue"
-        static let totalChangeRate = "totalChangeRate"
-
+        static let id = "id"
+        static let amount = "amount"
+        static let coinId = "coinId"
     }
-
 }

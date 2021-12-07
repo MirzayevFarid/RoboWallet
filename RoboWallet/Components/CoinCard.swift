@@ -103,11 +103,10 @@ struct MainListCoinCard: View {
 
 struct WalletListCoinCard: View {
     var coin: CoinModel
-    var coinRank: Int?
+    var coinNo: Int
     var body: some View {
-
         HStack(alignment: .center) {
-            Text("\(coinRank ?? coin.rank)")
+            Text("\(coinNo)")
                 .font(.caption)
                 .foregroundColor(Color.secondary)
                 .frame(minWidth: 30)

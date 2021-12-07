@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CoinWalletCard: View {
-    var portfolio: PortfolioModel
+struct PortfolioCard: View {
+//    var portfolioCoin: PortfolioCoinModel
 
     var body: some View {
         ZStack {
@@ -17,25 +17,25 @@ struct CoinWalletCard: View {
 
             HStack(alignment: .top, spacing: 80) {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(portfolio.portfolioName).font(Font.body.weight(.bold))
-                    Text("\(portfolio.totalPortfolioValue)")
-                        .font(Font.system(size: 28))
-                        .font(Font.body.weight(.bold))
+                    //                    Text(portfolio.portfolioName).font(Font.body.weight(.bold))
+                    //                    Text("\(portfolio.totalPortfolioValue)")
+                    //                        .font(Font.system(size: 28))
+                    //                        .font(Font.body.weight(.bold))
                 }
                 VStack(spacing: 10) {
-                    Image(systemName: "bitcoinsign.circle")
-                        .font(Font.system(size: 25))
-                        .font(Font.body.weight(.bold))
-                        .foregroundColor(Color(hex: "#\(portfolio.portfolioColor)"))
-                        .background(
-                            Circle()
-                                .fill(Color(hex: "#\(portfolio.portfolioColor)").opacity(0.2))
-                                .frame(width: 50, height: 50)
-                        )
-                    HStack {
-                        Text("^").font(Font.body.weight(.bold))
-                        Text("\(portfolio.totalChangeRate.asPercentString())").font(Font.body.weight(.bold))
-                    }.padding(.vertical)
+                    //                    Image(systemName: "bitcoinsign.circle")
+                    //                        .font(Font.system(size: 25))
+                    //                        .font(Font.body.weight(.bold))
+                    //                        .foregroundColor(Color(hex: "#\(portfolio.portfolioColor)"))
+                    //                        .background(
+                    //                            Circle()
+                    //                                .fill(Color(hex: "#\(portfolio.portfolioColor)").opacity(0.2))
+                    //                                .frame(width: 50, height: 50)
+                    //                        )
+                    //                    HStack {
+                    //                        Text("^").font(Font.body.weight(.bold))
+                    //                        Text("\(portfolio.totalChangeRate.asPercentString())").font(Font.body.weight(.bold))
+                    //                    }.padding(.vertical)
                 }
                 .padding(.top, 15)
             }
@@ -96,7 +96,7 @@ struct BlankPortfolioCard: View {
                                 .fill(Color(colors))
                                 .frame(width: 40, height: 40)
                                 .onTapGesture(perform: {
-                                        hideKeyboard()
+                                    hideKeyboard()
 
                                     withAnimation(.default, {
                                         portfolioColor = colors.toHexString()

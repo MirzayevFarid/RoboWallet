@@ -69,31 +69,6 @@ struct Home: View {
                         .padding()
                 }
                 VStack(alignment: .leading){
-                    // WALLET
-                    HStack{
-                        Text("Your Portfolios")
-                            .padding(25)
-                            .font(Font.system(size: 24))
-                        Spacer()
-
-                        NavigationStep(type: .sheet, style: .view) {
-                            AddPortfolio()
-                                .environmentObject(fs)
-                        } label: {
-                            Image(systemName: "plus.rectangle.on.rectangle")
-                                .padding(.trailing, 20)
-                        }
-                    }
-
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-
-                            ForEach(fs.portfolios, id: \.id) { item in
-                                CoinWalletCard(portfolio: item)
-                            }
-                        }.padding(.trailing)
-                    }
-
                     // TRENDING
                     Text("Trending")
                         .padding(.leading, 25)
@@ -134,9 +109,6 @@ struct Home: View {
             guard let uid = Auth.auth().currentUser?.uid else {
                 return
             }
-
-            fs.fetchPortfolios(uid: uid)
-
 
             FBFirestore.retrieveFBUser(uid: uid) { (result) in
                 switch result {

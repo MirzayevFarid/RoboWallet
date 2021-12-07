@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct AddCoin2: View {
+struct AddCoin: View {
 
-    @EnvironmentObject private var vm: MarketViewModel
+    @EnvironmentObject private var vm: WalletViewModel
     @State private var selectedCoin: CoinModel? = nil
     @State private var quantityText: String = ""
     @State private var showCheckmark: Bool = false
@@ -44,14 +44,14 @@ struct AddCoin2: View {
     }
 }
 
-struct AddCoin2_Previews: PreviewProvider {
+struct AddCoin_Previews: PreviewProvider {
     static var previews: some View {
-        AddCoin2().environmentObject(MarketViewModel())
+        AddCoin().environmentObject(MarketViewModel()).environmentObject(WalletViewModel())
     }
 }
 
 
-extension AddCoin2 {
+extension AddCoin {
 
     private var coinLogoList: some View {
         ScrollView(.horizontal, showsIndicators: false, content: {
@@ -148,8 +148,9 @@ extension AddCoin2 {
             let amount = Double(quantityText)
         else { return }
 
-        // save to portfolio
-//        vm.updatePortfolio(coin: coin, amount: amount)
+
+        vm.updatePortfolio(coin: coin, amount: amount)
+
 
         // show checkmark
         withAnimation(.easeIn) {

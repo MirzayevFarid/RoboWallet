@@ -51,6 +51,7 @@
 		DBC80EC027273C0000B6291F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBC80EBF27273C0000B6291F /* GoogleService-Info.plist */; };
 		DBC80EC527273EB600B6291F /* FBAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC80EC327273EB600B6291F /* FBAuthError.swift */; };
 		DBC80EC627273EB600B6291F /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC80EC427273EB600B6291F /* FBAuth.swift */; };
+		DBD02995275E81CF000949A6 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD02994275E81CF000949A6 /* WalletViewModel.swift */; };
 		DBE3A837272438C600DE680A /* NavigationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3A836272438C600DE680A /* NavigationStep.swift */; };
 		DBE3A8392724456D00DE680A /* NavigationDismissStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3A8382724456D00DE680A /* NavigationDismissStep.swift */; };
 		DBE3A84427245ED200DE680A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE3A84327245ED200DE680A /* ContentView.swift */; };
@@ -129,6 +130,7 @@
 		DBC80EBF27273C0000B6291F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DBC80EC327273EB600B6291F /* FBAuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuthError.swift; sourceTree = "<group>"; };
 		DBC80EC427273EB600B6291F /* FBAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
+		DBD02994275E81CF000949A6 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
 		DBE3A836272438C600DE680A /* NavigationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStep.swift; sourceTree = "<group>"; };
 		DBE3A8382724456D00DE680A /* NavigationDismissStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDismissStep.swift; sourceTree = "<group>"; };
 		DBE3A84327245ED200DE680A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				DB4D1077272A03660016AFC9 /* CoinImageViewModel.swift */,
 				DB8350BA2745607F0068D307 /* HomeViewModel.swift */,
 				DBF446F127459AE90088E868 /* CoinDetailViewModel.swift */,
+				DBD02994275E81CF000949A6 /* WalletViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				DB4D10702729F27B0016AFC9 /* NetworkingManager.swift in Sources */,
 				DBC80EC627273EB600B6291F /* FBAuth.swift in Sources */,
 				DB71127E2727496D00D8E607 /* FBFireStoreError.swift in Sources */,
+				DBD02995275E81CF000949A6 /* WalletViewModel.swift in Sources */,
 				DB458AF02728681600BB2E8C /* Market.swift in Sources */,
 				DB77E6DB27260145009AE52C /* UserInfo.swift in Sources */,
 				DBE57E61272DF6A3005490D4 /* SearchBarView.swift in Sources */,

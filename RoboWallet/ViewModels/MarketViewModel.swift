@@ -12,7 +12,6 @@ import SwiftUI
 class MarketViewModel: ObservableObject {
 
     @Published var allCoins: [CoinModel] = []
-    @Published var trendingCoins: [CoinModel] = []
     @Published var filteredCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
     @Published var statistics: [StatisticModel] = []

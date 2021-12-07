@@ -10,17 +10,12 @@ import Combine
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-
     @Published var trendingCoins: [CoinModel] = []
-    @Published var portfolios: [PortfolioModel] = []
     @Published var isLoading: Bool = false
-
-    private let coinDataService: CoinDataService
-
-    private var cancellables = Set<AnyCancellable>()
-
     @EnvironmentObject var userInfo: UserInfo
 
+    private let coinDataService: CoinDataService
+    private var cancellables = Set<AnyCancellable>()
 
     init() {
         isLoading = true
@@ -32,13 +27,11 @@ class HomeViewModel: ObservableObject {
         coinDataService.$allCoins
             .sink { [weak self] (returnedCoins) in
                 self?.trendingCoins = returnedCoins.sorted(by: {$0.priceChangePercentage24H ?? 0 > $1.priceChangePercentage24H ?? 0} )
-
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation(.default){
                         self?.isLoading = false
                     }
                 }
-
             }
             .store(in: &cancellables)
         isLoading = false
