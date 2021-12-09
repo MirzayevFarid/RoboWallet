@@ -12,7 +12,6 @@ import SwiftUIGIF
 
 struct Wallet: View {
     @StateObject private var vm = WalletViewModel()
-
     var body: some View {
         VStack(alignment: .leading){
             HStack{
@@ -35,15 +34,12 @@ struct Wallet: View {
 
             SearchBarView(searchText: $vm.searchText)
 
-            RefreshableScrollView(action: vm.reloadData) {
-                if vm.isLoading {
-                    GIFImage(name: "btcGif")
-                        .frame(height: 80)
-                        .padding()
-                }
+            ScrollView(showsIndicators: false) {
+                PortfolioCard().environmentObject(vm)
 
                 portfolioCoins
-                    .padding(.top)
+                    .padding(.vertical)
+
 
                 Spacer(minLength: 80)
             }

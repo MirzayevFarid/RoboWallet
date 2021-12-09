@@ -40,6 +40,7 @@
 		DB8350BB2745607F0068D307 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8350BA2745607F0068D307 /* HomeViewModel.swift */; };
 		DB8350C6274588740068D307 /* SwiftUIGIF in Frameworks */ = {isa = PBXBuildFile; productRef = DB8350C5274588740068D307 /* SwiftUIGIF */; };
 		DB8350C827458A680068D307 /* btcGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = DB8350C727458A680068D307 /* btcGif.gif */; };
+		DB879C712762A1A3003BA697 /* SortFilterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB879C702762A1A3003BA697 /* SortFilterBar.swift */; };
 		DB8C67BB27221DFD0006BF1B /* RoboWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67BA27221DFD0006BF1B /* RoboWalletApp.swift */; };
 		DB8C67BD27221DFD0006BF1B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C67BC27221DFD0006BF1B /* Login.swift */; };
 		DB8C67BF27221DFF0006BF1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8C67BE27221DFF0006BF1B /* Assets.xcassets */; };
@@ -117,6 +118,7 @@
 		DB801E042733068600580CE6 /* CoinLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinLogo.swift; sourceTree = "<group>"; };
 		DB8350BA2745607F0068D307 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DB8350C727458A680068D307 /* btcGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = btcGif.gif; sourceTree = "<group>"; };
+		DB879C702762A1A3003BA697 /* SortFilterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterBar.swift; sourceTree = "<group>"; };
 		DB8C67B727221DFD0006BF1B /* RoboWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8C67BA27221DFD0006BF1B /* RoboWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboWalletApp.swift; sourceTree = "<group>"; };
 		DB8C67BC27221DFD0006BF1B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				DB31433C27316012006E7711 /* HomeStats.swift */,
 				DB801E042733068600580CE6 /* CoinLogo.swift */,
 				DBF446F927459E1F0088E868 /* CoinChart.swift */,
+				DB879C702762A1A3003BA697 /* SortFilterBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				DBE3A84B272475C300DE680A /* MockData.swift in Sources */,
 				DB44F4F527559E1C00CEB462 /* Wallet.swift in Sources */,
 				DBE3A847272461BF00DE680A /* Home.swift in Sources */,
+				DB879C712762A1A3003BA697 /* SortFilterBar.swift in Sources */,
 				DB31433B27315F25006E7711 /* MarketDataModel.swift in Sources */,
 				DB8C67BB27221DFD0006BF1B /* RoboWalletApp.swift in Sources */,
 				DB33B29B274E606D003E7457 /* PortfolioModel.swift in Sources */,
