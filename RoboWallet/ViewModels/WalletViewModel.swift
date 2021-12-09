@@ -11,13 +11,11 @@ import SwiftUI
 import Firebase
 
 class WalletViewModel: ObservableObject {
-    @Published var portfolios: [PortfolioCoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
     @Published var allCoins: [CoinModel] = []
+    @Published var allCryptoCoins: [CoinModel] = []
     @Published var searchText: String = ""
     @Published var isLoading: Bool = false
-    @EnvironmentObject var userInfo: UserInfo
-
 
     private let coinDataService = CoinDataService()
     private let firestoreService = FirestoreManager()
@@ -26,21 +24,23 @@ class WalletViewModel: ObservableObject {
     init() {
         isLoading = true
         addSubscribers()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            withAnimation(.default){
-                self.isLoading = false
-            }
-        }
+        isLoading = false
     }
 
     func addSubscribers() {
 
+        coinDataService.$allCoins
+            .sink { [weak self] (returnedCoins) in
+                self?.allCryptoCoins = returnedCoins
+            }
+            .store(in: &cancellables)
+
         $searchText
-            .combineLatest(coinDataService.$allCoins)
+            .combineLatest($allCoins)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .map(filterCoins)
             .sink { [weak self] (returnedCoins) in
-                self?.allCoins = returnedCoins
+                self?.portfolioCoins = returnedCoins
             }
             .store(in: &cancellables)
 
@@ -50,9 +50,9 @@ class WalletViewModel: ObservableObject {
             .sink { [weak self] (returnedCoins) in
                 guard let self = self else { return }
                 self.portfolioCoins = returnedCoins
+                self.allCoins = returnedCoins
             }
             .store(in: &cancellables)
-
 
     }
 

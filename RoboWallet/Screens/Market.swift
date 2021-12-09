@@ -9,8 +9,6 @@
 import SwiftUI
 import SwiftUIGIF
 
-
-
 struct Market: View {
     @StateObject private var vm = MarketViewModel()
     @State private var selectCoin: CoinModel? = nil

@@ -6,17 +6,15 @@
 //
 
 import SwiftUI
-import SwiftUIGIF
 import Firebase
+import SwiftUIGIF
+
 
 struct Wallet: View {
     @StateObject private var vm = WalletViewModel()
 
-    @State private var selectedTab = 0
-
     var body: some View {
         VStack(alignment: .leading){
-
             HStack{
                 Text("Wallet")
                     .font(Font.system(size: 32, weight: .bold))
@@ -24,7 +22,7 @@ struct Wallet: View {
 
                 Spacer()
 
-                if !vm.portfolioCoins.isEmpty { NavigationStep(type: .sheet, style: .view) {
+                if !vm.allCoins.isEmpty { NavigationStep(type: .sheet, style: .view) {
                     AddCoin()
                         .environmentObject(vm)
                 } label: {
@@ -34,6 +32,9 @@ struct Wallet: View {
                 }
             }
 
+
+            SearchBarView(searchText: $vm.searchText)
+
             RefreshableScrollView(action: vm.reloadData) {
                 if vm.isLoading {
                     GIFImage(name: "btcGif")
@@ -41,13 +42,23 @@ struct Wallet: View {
                         .padding()
                 }
 
-                if vm.portfolioCoins.isEmpty { blankPortfolio }
-                else { portfolioCoins }
-            }.redacted(reason: (vm.isLoading) ? .placeholder : [])
+                portfolioCoins
+                    .padding(.top)
+
+                Spacer(minLength: 80)
+            }
+            .redacted(reason: (vm.isLoading) ? .placeholder : [])
+
+            .ignoresSafeArea()
+
         }
         .padding(.vertical)
-        .background(BlurredBackground().ignoresSafeArea())
+        .background(BlurredBackground())
         .ignoresSafeArea()
+        .navigationBarHidden(true)
+        .onAppear {
+            vm.searchText = ""
+        }
     }
 }
 
@@ -61,7 +72,8 @@ struct Wallet_Previews: PreviewProvider {
 
 extension Wallet {
     private var blankPortfolio: some View {
-        HStack{
+        HStack(alignment: .center)
+        {
             Text("Please Add Coin To Portfolio")
             NavigationStep(type: .sheet, style: .view) {
                 AddCoin()
@@ -83,7 +95,5 @@ extension Wallet {
                 }
             }.padding(.top)
         }
-
     }
 }
-

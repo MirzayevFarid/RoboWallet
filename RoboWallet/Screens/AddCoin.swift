@@ -1,18 +1,14 @@
-//
-//  AddCoin.swift
-//  RoboWallet
-//
-//  Created by Mirzayev Farid on 3.11.2021.
-//
-
 import SwiftUI
 
 struct AddCoin: View {
+
+
 
     @EnvironmentObject private var vm: WalletViewModel
     @State private var selectedCoin: CoinModel? = nil
     @State private var quantityText: String = ""
     @State private var showCheckmark: Bool = false
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         NavigationView {
@@ -29,7 +25,10 @@ struct AddCoin: View {
             .navigationTitle("Edit Portfolio")
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    XMarkButton()
+                    NavigationDismissStep(style: .button, presentationMode: presentationMode, label: {
+                        Image(systemName: "xmark")
+                            .font(.headline)
+                    })
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     trailingNavBarButtons
@@ -41,12 +40,12 @@ struct AddCoin: View {
                 }
             })
         }
-    }
-}
+        .onAppear {
+            vm.searchText = ""
+            quantityText = ""
+            selectedCoin = nil
+        }
 
-struct AddCoin_Previews: PreviewProvider {
-    static var previews: some View {
-        AddCoin().environmentObject(MarketViewModel()).environmentObject(WalletViewModel())
     }
 }
 
@@ -56,7 +55,7 @@ extension AddCoin {
     private var coinLogoList: some View {
         ScrollView(.horizontal, showsIndicators: false, content: {
             LazyHStack(spacing: 10) {
-                ForEach(vm.searchText.isEmpty ? vm.portfolioCoins : vm.allCoins) { coin in
+                ForEach(vm.searchText.isEmpty ? vm.portfolioCoins : vm.allCryptoCoins) { coin in
                     CoinLogoView(coin: coin)
                         .frame(width: 75)
                         .padding(4)
@@ -130,6 +129,7 @@ extension AddCoin {
 
             Button(action: {
                 saveButtonPressed()
+                presentationMode.wrappedValue.dismiss()
             }, label: {
                 Text("Save".uppercased())
             })
@@ -148,9 +148,8 @@ extension AddCoin {
             let amount = Double(quantityText)
         else { return }
 
-
+        // save to portfolio
         vm.updatePortfolio(coin: coin, amount: amount)
-
 
         // show checkmark
         withAnimation(.easeIn) {
@@ -167,12 +166,10 @@ extension AddCoin {
                 showCheckmark = false
             }
         }
-
     }
 
     private func removeSelectedCoin() {
         selectedCoin = nil
         vm.searchText = ""
     }
-
 }
