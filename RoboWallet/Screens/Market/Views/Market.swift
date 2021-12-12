@@ -19,10 +19,12 @@ struct Market: View {
             Text("Market")
                 .font(Font.system(size: 32, weight: .bold))
                 .padding()
+                .padding(.top, 10)
 
             SearchBarView(searchText: $vm.searchText)
 
-            HomeStats().environmentObject(vm)
+            HomeStats()
+                .environmentObject(vm)
                 .redacted(reason: (vm.allCoins.count == 0 || vm.isLoading) ? .placeholder : [])
 
 
@@ -41,7 +43,6 @@ struct Market: View {
                 Spacer(minLength: 80)
             }
             .redacted(reason: (vm.allCoins.count == 0 || vm.isLoading) ? .placeholder : [])
-
             .ignoresSafeArea()
 
         }

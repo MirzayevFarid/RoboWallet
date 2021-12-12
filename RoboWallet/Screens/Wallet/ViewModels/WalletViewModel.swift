@@ -31,23 +31,24 @@ class WalletViewModel: ObservableObject {
     }
 
     func addSubscribers() {
-
-        coinDataService.$allCoins
-            .sink { [weak self] (returnedCoins) in
-                self?.allCryptoCoins = returnedCoins
-            }
-            .store(in: &cancellables)
-
         $searchText
             .combineLatest($allCoins)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .map(filterCoins)
             .sink { [weak self] (returnedCoins) in
                 self?.portfolioCoins = returnedCoins
-
             }
             .store(in: &cancellables)
 
+        $searchText
+            .combineLatest(coinDataService.$allCoins)
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .map(filterCoins)
+            .sink { [weak self] (returnedCoins) in
+                self?.allCryptoCoins = returnedCoins
+            }
+            .store(in: &cancellables)
+    
         coinDataService.$allCoins
             .combineLatest(firestoreService.$portfolioCoins)
             .map(mapAllCoinsToPortfolioCoins)
@@ -56,8 +57,6 @@ class WalletViewModel: ObservableObject {
                 self.portfolioCoins = returnedCoins
                 self.allCoins = returnedCoins
 
-                print("1============================================================")
-                print(returnedCoins.count)
 
                 self.portfolioValue =
                 returnedCoins
@@ -76,11 +75,11 @@ class WalletViewModel: ObservableObject {
 
                 self.percentageChange = ((self.portfolioValue - self.previousValue) / self.previousValue)
 
-
-                print("2============================================================")
-                print(self.portfolioValue.asCurrencyWith2Decimals())
-
-
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation(.default){
+                        self.isLoading = false
+                    }
+                }
             }
             .store(in: &cancellables)
 
@@ -98,8 +97,17 @@ class WalletViewModel: ObservableObject {
 
 
     func updatePortfolio(coin: CoinModel, amount: Double) {
-        firestoreService.addCoin(newCoin: coin, amount: amount)
+        if portfolioCoins.first(where: { $0.id == coin.id }) != nil {
+            if amount > 0 {
+                firestoreService.updateCoin(coin: coin, amount: amount)
+            } else {
+                firestoreService.deleteCoin(coin: coin)
+            }
+        } else {
+            firestoreService.updateCoin(coin: coin, amount: amount)
+        }
     }
+
 
 
     func reloadData() {
@@ -107,7 +115,6 @@ class WalletViewModel: ObservableObject {
         coinDataService.getCoins()
         firestoreService.getPortfolios()
         HapticManager.notification(type: .success)
-        isLoading = false
     }
 
     private func filterCoins(text: String, coins: [CoinModel]) -> [CoinModel] {

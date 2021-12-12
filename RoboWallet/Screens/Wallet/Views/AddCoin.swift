@@ -1,9 +1,6 @@
 import SwiftUI
 
 struct AddCoin: View {
-
-
-
     @EnvironmentObject private var vm: WalletViewModel
     @State private var selectedCoin: CoinModel? = nil
     @State private var quantityText: String = ""
@@ -25,7 +22,12 @@ struct AddCoin: View {
             .navigationTitle("Edit Portfolio")
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationDismissStep(style: .button, presentationMode: presentationMode, label: {
+                    Button(action: {
+                        vm.searchText = ""
+                        quantityText = ""
+                        selectedCoin = nil
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
                         Image(systemName: "xmark")
                             .font(.headline)
                     })
@@ -51,11 +53,10 @@ struct AddCoin: View {
 
 
 extension AddCoin {
-
     private var coinLogoList: some View {
         ScrollView(.horizontal, showsIndicators: false, content: {
             LazyHStack(spacing: 10) {
-                ForEach(vm.searchText.isEmpty ? vm.portfolioCoins : vm.allCryptoCoins) { coin in
+                ForEach(vm.searchText.isEmpty ?  vm.portfolioCoins : vm.allCryptoCoins) { coin in
                     CoinLogoView(coin: coin)
                         .frame(width: 75)
                         .padding(4)
@@ -150,6 +151,7 @@ extension AddCoin {
 
         // save to portfolio
         vm.updatePortfolio(coin: coin, amount: amount)
+        vm.reloadData()
 
         // show checkmark
         withAnimation(.easeIn) {

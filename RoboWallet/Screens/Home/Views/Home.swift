@@ -11,6 +11,7 @@ import Foundation
 import SwiftUI
 import Firebase
 import SwiftUIGIF
+import AlertToast
 
 
 struct Home: View {
@@ -20,6 +21,7 @@ struct Home: View {
     @StateObject private var fs = FirestoreManager()
     @State private var selectCoin: CoinModel? = nil
     @State private var showDetailView: Bool = false
+    @State private var showToast = false
 
     var body: some View {
 
@@ -27,6 +29,7 @@ struct Home: View {
             Text("Home")
                 .font(Font.system(size: 32, weight: .bold))
                 .padding()
+                .padding(.top, 10)
 
 
             // ACTION BUTTONS
@@ -34,33 +37,22 @@ struct Home: View {
                 Spacer()
                 Spacer()
 
-                NavigationStep(type: .sheet, style: .view) {
-                    Converter()
-                } label: {
-                    ActionCard(name: "Watchlist", icon: "star", color: "green")
+
+                ActionCard(name: "Watchlist", icon: "star", color: "green").onTapGesture {
+                    showToast.toggle()
                 }
 
-
-                NavigationStep(type: .sheet, style: .view) {
-                    Converter()
-                } label: {
-                    ActionCard(name: "Convert", icon: "repeat", color: "yellow")
-
+                ActionCard(name: "Convert", icon: "repeat", color: "yellow").onTapGesture {
+                    showToast.toggle()
                 }
-
-                NavigationStep(type: .sheet, style: .view) {
-                    Converter()
-                } label: {
-                    ActionCard(name: "Compare", icon: "square.on.square", color: "blue")
+                ActionCard(name: "Compare", icon: "square.on.square", color: "blue").onTapGesture {
+                    showToast.toggle()
                 }
-
-
-                NavigationStep(type: .sheet, style: .view) {
-                    Converter()
-                } label: {
-                    ActionCard(name: "Price Alert", icon: "bolt", color: "purple")
+                ActionCard(name: "Price Alert", icon: "bolt", color: "purple").onTapGesture {
+                    showToast.toggle()
                 }
             }
+
 
             RefreshableScrollView(action: vm.reloadData) {
                 if vm.isLoading {
@@ -92,6 +84,9 @@ struct Home: View {
                 .ignoresSafeArea()
             }
             .redacted(reason: vm.trendingCoins.count == 0 || vm.isLoading ? .placeholder : [])
+        }
+        .toast(isPresenting: $showToast){
+            AlertToast(type: .complete(Color.green), title: "Coming Sooooon!")
         }
         .padding(.vertical)
         .background(BlurredBackground())

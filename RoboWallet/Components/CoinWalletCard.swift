@@ -102,7 +102,7 @@ struct BlankPortfolioCard: View {
                                 .fill(Color(colors))
                                 .frame(width: 40, height: 40)
                                 .onTapGesture(perform: {
-                                    hideKeyboard()
+                                    UIApplication.shared.endEditing()
 
                                     withAnimation(.default, {
                                         portfolioColor = colors.toHexString()

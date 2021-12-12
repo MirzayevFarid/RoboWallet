@@ -40,21 +40,21 @@ class FirestoreManager: ObservableObject {
 
 
 
-    func addCoin(newCoin: CoinModel, amount: Double) {
+    func updateCoin(coin: CoinModel, amount: Double) {
 
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
         let data = [
-            "id": newCoin.id,
-            "coinId": newCoin.id,
+            "id": coin.id,
+            "coinId": coin.id,
             "amount": amount,
         ] as [String : Any]
 
         Firestore.firestore().collection(FBKeys.CollectionPath.users)
             .document(uid)
             .collection(FBKeys.CollectionPath.portfolios)
-            .document("\(newCoin.id)")
+            .document("\(coin.id)")
             .setData(data, merge: true) { (err) in
                 if let err = err {
                     print(err.localizedDescription)
@@ -62,4 +62,19 @@ class FirestoreManager: ObservableObject {
                 }
             }
     }
+
+
+    func deleteCoin(coin: CoinModel) {
+
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+
+        Firestore.firestore().collection(FBKeys.CollectionPath.users)
+            .document(uid)
+            .collection(FBKeys.CollectionPath.portfolios)
+            .document("\(coin.id)")
+            .delete()
+    }
+
 }
