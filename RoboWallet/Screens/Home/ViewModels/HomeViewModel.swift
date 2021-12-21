@@ -10,9 +10,9 @@ import Combine
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
+    @EnvironmentObject var userInfo: UserInfo
     @Published var trendingCoins: [CoinModel] = []
     @Published var isLoading: Bool = false
-    @EnvironmentObject var userInfo: UserInfo
     @Published var sortOption: SortOption = .change
 
     private let coinDataService: CoinDataService

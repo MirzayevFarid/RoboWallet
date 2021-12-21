@@ -29,17 +29,3 @@ struct CoinLogoView: View {
         }
     }
 }
-
-//struct CoinLogoView_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//        Group {
-//            CoinLogoView(coin: dev.coin)
-//                .previewLayout(.sizeThatFits)
-//
-//            CoinLogoView(coin: dev.coin)
-//                .previewLayout(.sizeThatFits)
-//                .preferredColorScheme(.dark)
-//        }
-//    }
-//}

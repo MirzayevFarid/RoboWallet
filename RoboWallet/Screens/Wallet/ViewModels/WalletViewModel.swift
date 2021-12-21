@@ -113,7 +113,7 @@ class WalletViewModel: ObservableObject {
     func reloadData() {
         isLoading = true
         coinDataService.getCoins()
-        firestoreService.getPortfolios()
+        firestoreService.getPortfolio()
         HapticManager.notification(type: .success)
     }
 

@@ -25,7 +25,7 @@ struct PortfolioCoinModel: Identifiable, Codable{
         data = [
             FBKeys.Portfolio.id: portfolio.id,
             FBKeys.Portfolio.coinId: portfolio.id,
-            FBKeys.Portfolio.amount: portfolio.currentHoldings,
+            FBKeys.Portfolio.amount: portfolio.currentHoldings ?? 0.0,
         ]
         return data
     }

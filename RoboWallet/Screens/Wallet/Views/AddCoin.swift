@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct AddCoin: View {
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject private var vm: WalletViewModel
     @State private var selectedCoin: CoinModel? = nil
     @State private var quantityText: String = ""
     @State private var showCheckmark: Bool = false
-    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         NavigationView {

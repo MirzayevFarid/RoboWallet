@@ -26,8 +26,7 @@ struct SearchBarView: View {
                     Image(systemName: "xmark.circle.fill")
                         .padding()
                         .offset(x: 10)
-                        .foregroundColor(Color.blue)
-//                        .foregroundColor(Color.primary)
+                        .foregroundColor(Color.primary)
                         .opacity(searchText.isEmpty ? 0.0 : 1.0)
                         .onTapGesture {
                             UIApplication.shared.endEditing()

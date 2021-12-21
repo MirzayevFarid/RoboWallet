@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 enum FBFirestore {
 
-    static func retrieveFBUser(uid: String, completion: @escaping (Result<FBUser, Error>) -> ()) {
+    static func retrieveFBUser(uid: String, completion: @escaping (Result<FBUserModel, Error>) -> ()) {
         let reference = Firestore
             .firestore()
             .collection(FBKeys.CollectionPath.users)
@@ -18,7 +18,7 @@ enum FBFirestore {
         getDocument(for: reference) { (result) in
             switch result {
             case .success(let data):
-                guard let user = FBUser(documentData: data) else {
+                guard let user = FBUserModel(documentData: data) else {
                     completion(.failure(FireStoreError.noUser))
                     return
                 }

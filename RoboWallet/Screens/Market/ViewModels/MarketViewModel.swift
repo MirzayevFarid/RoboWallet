@@ -18,10 +18,8 @@ class MarketViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var isLoading: Bool = false
 
-
     private let coinDataService: CoinDataService
     private let marketDataService: MarketDataService
-
     private var cancellables = Set<AnyCancellable>()
 
     init() {
@@ -58,8 +56,6 @@ class MarketViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-
-
 
     func reloadData() {
         isLoading = true

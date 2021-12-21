@@ -10,9 +10,9 @@
 import SwiftUI
 
 struct Login: View {
+
     @EnvironmentObject var userInfo: UserInfo
     @State var user: UserViewModel = UserViewModel()
-
     @State private var showAlert = false
     @State private var authError: EmailAuthError?
     
@@ -23,17 +23,22 @@ struct Login: View {
                     .ignoresSafeArea()
 
                 // ICONS
-                Image("btc3")
-                    .position(x: 60, y: 80)
+                Group {
+                    Image("btc3")
+                        .position(x: 60, y: 80)
                     .ignoresSafeArea()
 
-                Image("eth3")
-                    .position(x: UIScreen.screenWidth / 1.15, y: UIScreen.screenHeight / 7)
-                    .ignoresSafeArea()
+                    Image("eth3")
+                        .position(x: UIScreen.screenWidth / 1.15, y: UIScreen.screenHeight / 7)
+                        .ignoresSafeArea()
 
-                Image("mountain3")
-                    .position(x: 50, y: 280)
-                    .ignoresSafeArea()
+                    Image("mountain3")
+                        .position(x: 50, y: 280)
+                        .ignoresSafeArea()
+                }
+
+
+
 
                 // LOGIN FIELD
                 ZStack {
@@ -135,23 +140,8 @@ extension UIScreen{
     static let screenSize = UIScreen.main.bounds.size
 }
 
-struct RoundedCorner: Shape {
-
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
-
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Login().previewDevice(PreviewDevice(rawValue: "iPhone 8")).preferredColorScheme(.dark)
-        Login().previewDevice(PreviewDevice(rawValue: "iPhone 11")).preferredColorScheme(.dark)
-        Login().previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max")).preferredColorScheme(.dark)
-
+        Login().preferredColorScheme(.dark)
     }
 }

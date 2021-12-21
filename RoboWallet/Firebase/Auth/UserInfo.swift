@@ -12,7 +12,7 @@ class UserInfo: ObservableObject {
         case undefined, signedOut, signedIn
     }
     @Published var isUserAuthenticated: FBAuthState = .undefined
-    @Published var user: FBUser = .init(uid: "", name: "", email: "")
+    @Published var user: FBUserModel = .init(uid: "", name: "", email: "")
 
     var authStateDidChangeListenerHandle: AuthStateDidChangeListenerHandle?
 

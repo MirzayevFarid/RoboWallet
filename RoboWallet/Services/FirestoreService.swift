@@ -7,10 +7,10 @@ class FirestoreManager: ObservableObject {
     @Published var portfolioCoins : [PortfolioCoinModel] = []
 
     init(){
-        getPortfolios()
+        getPortfolio()
     }
 
-    func getPortfolios(){
+    func getPortfolio(){
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }

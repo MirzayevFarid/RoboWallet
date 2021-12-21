@@ -10,9 +10,10 @@
 import SwiftUI
 
 struct SignUp: View {
-    @EnvironmentObject var userInfo: UserInfo
-    @State var user: UserViewModel = UserViewModel()
     @Environment(\.presentationMode) private var presentationMode
+    @EnvironmentObject var userInfo: UserInfo
+
+    @State var user: UserViewModel = UserViewModel()
     @State private var showError = false
     @State private var errorString = ""
 
@@ -84,8 +85,6 @@ struct SignUp: View {
 
 struct SignUp_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp().previewDevice(PreviewDevice(rawValue: "iPhone 8")).preferredColorScheme(.dark)
-        SignUp().previewDevice(PreviewDevice(rawValue: "iPhone 11")).preferredColorScheme(.dark)
-        SignUp().previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max")).preferredColorScheme(.dark)
+        SignUp().preferredColorScheme(.dark)
     }
 }

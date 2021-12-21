@@ -18,8 +18,6 @@ class CoinImageViewModel: ObservableObject {
     private let dataService: CoinImageService
     private var cancellables = Set<AnyCancellable>()
 
-
-
     init(coin: CoinModel) {
         self.coin = coin
         self.dataService = CoinImageService(coin: coin)

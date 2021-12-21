@@ -8,7 +8,6 @@
 import Foundation
 
 
-// MARK: - Firstore errors
 enum FireStoreError: Error {
     case noAuthDataResult
     case noCurrentUser
@@ -18,7 +17,6 @@ enum FireStoreError: Error {
 }
 
 extension FireStoreError: LocalizedError {
-    // This will provide me with a specific localized description for the FireStoreError
     var errorDescription: String? {
         switch self {
         case .noAuthDataResult:

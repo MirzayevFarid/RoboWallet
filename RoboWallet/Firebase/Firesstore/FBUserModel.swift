@@ -7,12 +7,10 @@
 
 import Foundation
 
-struct FBUser {
+struct FBUserModel {
     let uid: String
     let name: String
     let email: String
-
-    // App Specific properties can be added here
 
     init(uid: String, name: String, email: String) {
         self.uid = uid
@@ -22,19 +20,15 @@ struct FBUser {
 
 }
 
-extension FBUser {
+extension FBUserModel {
     init?(documentData: [String : Any]) {
         let uid = documentData[FBKeys.User.uid] as? String ?? ""
         let name = documentData[FBKeys.User.name] as? String ?? ""
         let email = documentData[FBKeys.User.email] as? String ?? ""
 
-        // Make sure you also initialize any app specific properties if you have them
-
-
         self.init(uid: uid,
                   name: name,
                   email: email
-                  // Dont forget any app specific ones here too
         )
     }
 
@@ -47,11 +41,8 @@ extension FBUser {
                 FBKeys.User.uid: uid,
                 FBKeys.User.name: name,
                 FBKeys.User.email: email
-                // Again, include any app specific properties that you want stored on creation
             ]
         } else {
-            // This is a subsequent entry so only merge uid and email so as not
-            // to overrwrite any other data.
             data = [
                 FBKeys.User.uid: uid,
                 FBKeys.User.email: email

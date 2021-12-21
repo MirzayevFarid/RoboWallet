@@ -119,9 +119,6 @@ struct WalletListCoinCard: View {
                                 .foregroundColor(.gray)
                         }
                     }
-
-
-
             })
             .background(
                 Color.white.opacity(0.001)
